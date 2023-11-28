@@ -1,0 +1,97 @@
+@use "@/app/scss/variables" as *;
+
+header {
+  width: 100vw;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $bg;
+  opacity: .95;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  .header-top-separator {
+    width: 95%;
+    height: 2px;
+  }
+
+  .header-contents {
+    width: calc(100vw - 50px - 50px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      .name {
+        font-size: 22px;
+        cursor: pointer;
+
+        &:hover {
+          color: $textGray;
+        }
+      }
+    }
+
+    .center {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+
+      .skills,
+      .projects,
+      .about {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 30px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $textBlack;
+        border-radius: 15px;
+        font-size: 15px;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: row;
+
+      .contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 30px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $textBlack;
+        border-radius: 15px;
+        font-size: 15px;
+        background-color: $accentGreen;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .header-bottom-separator {
+    width: 95%;
+    height: 2px;
+    background-color: $textBlack;
+  }
+}

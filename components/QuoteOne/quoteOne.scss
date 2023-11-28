@@ -1,0 +1,40 @@
+@use "@/app/scss/variables" as *;
+
+#quoteOne-section {
+  width: 100vw;
+  height: 25vh;
+  background-color: $textBlack;
+  color: $bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $fontOpenSansLight;
+
+  .quote-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 150px;
+
+    .quote {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+
+      span {
+        display: block;
+      }
+    }
+
+    .credit {
+      position: absolute;
+      right: 150px;
+      top: 117vh;
+      font-size: 20px;
+    }
+  }
+}

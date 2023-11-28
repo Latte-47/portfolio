@@ -1,0 +1,18 @@
+@use "@/app/scss/variables" as *;
+
+#skills-section {
+  width: 100vw;
+  height: 100vh;
+
+  .skills-container {
+    padding: 100px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-family: $fontOpenSansBold;
+      font-size: 30px;
+    }
+  }
+}

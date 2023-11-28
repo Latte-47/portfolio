@@ -1,0 +1,34 @@
+@use "@/app/scss/variables" as *;
+
+#hero-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 150px;
+
+
+    .title-one {
+      font-size: 90px;
+      line-height: 30px;
+      letter-spacing: -2px;
+    }
+
+    .title-two {
+      font-size: 90px;
+    }
+
+    .title-three {
+      font-size: 70px;
+      line-height: 50px;
+      color: $textGray;
+    }
+  }
+}
+

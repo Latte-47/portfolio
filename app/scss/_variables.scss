@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url("./fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-Light";
+  src: url("./fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("./fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-Italic";
+  src: url("./fonts/OpenSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+$fontOpenSans: "OpenSans", sans-serif;
+$fontOpenSansLight: "OpenSans-Light", sans-serif;
+$fontOpenSansBold: "OpenSans-Bold", sans-serif;
+$fontOpenSansItalic: "OpenSans-Italic", sans-serif;
+
+$bg: #fff8e7;
+$textBlack: #444444;
+$textGray: #656565;
+$accentGreen: #98ff98;
