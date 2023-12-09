@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./scss/_globals.scss";
 
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Viplav Kamble | Front-end Developer",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

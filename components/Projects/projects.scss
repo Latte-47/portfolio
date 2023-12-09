@@ -2,15 +2,16 @@
 
 #projects-section {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: $textBlack;
   color: $bg;
   display: flex;
   flex-direction: column;
   align-items: center;
+  clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
 
-  .projects-container {
-    padding: 100px 150px;
+  #projects-container {
+    padding: 250px 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,8 +25,9 @@
       display: flex;
       flex-direction: column;
       width: calc(100vw - 150px - 150px);
-      padding: 50px 0;
+      padding-top: 50px;
       font-family: $fontOpenSansLight;
+      gap: 25px;
 
       .projectOne {
         width: 100%;
@@ -33,7 +35,7 @@
         border-style: solid;
         border-color: black;
         border-width: 1px;
-        border-radius: 25px;
+        border-radius: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -55,7 +57,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: start;
+            align-items: flex-start;
             padding: 20px;
 
             .project-title {
@@ -85,7 +87,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: start;
+            align-items: flex-start;
             padding: 0 20px 40px 20px;
 
             .project-year {
@@ -101,7 +103,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: start;
+            align-items: flex-start;
             padding: 20px;
 
             .project-source {
@@ -146,17 +148,20 @@
             justify-content: space-between;
 
             .project-description {
-
+              text-align: left;
             }
 
             .project-live {
               display: flex;
               flex-direction: row;
               gap: 5px;
+              width: fit-content;
               align-items: center;
+              text-decoration: underline;
+              cursor: pointer;
 
               svg {
-                fill: $accentGreen;
+                fill: $bg;
               }
 
               p {
@@ -179,6 +184,36 @@
             height: auto;
             border-radius: 15px;
             overflow: hidden;
+          }
+        }
+      }
+
+      .projects-all {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 20px;
+        border-color: black;
+        margin-top: 100px;
+
+        &:hover {
+          background-color: $textGray;
+        }
+
+        .content {
+          margin: 25px;
+          font-family: $fontOpenSansLightItalic;
+          font-size: 20px;
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:hover {
+            color: $accentGreen;
           }
         }
       }

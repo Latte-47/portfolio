@@ -9,7 +9,7 @@ import tkpImage from "@/public/assets/images/tkp-webpage.png";
 export default function Projects() {
   return (
     <section id="projects-section">
-      <div className="projects-container">
+      <div id="projects-container">
         <div className="title">PROJECTS</div>
         <div className="projects-list">
           <div className="projectOne">
@@ -58,6 +58,9 @@ export default function Projects() {
                 />
               </div>
             </div>
+          </div>
+          <div className="projects-all">
+            <div className="content">view all projects</div>
           </div>
         </div>
       </div>

@@ -1,0 +1,85 @@
+@use "@/app/scss/variables" as *;
+
+footer {
+  width: 100vw;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $textBlack;
+  opacity: 0.95;
+  color: $bg;
+  font-family: $fontOpenSansLight;
+
+  .footer-container {
+    width: calc(100vw - 50px - 50px);
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+
+      p {
+        margin: 0;
+        font-size: 17px;
+        
+        span {
+          color: $accentGreen;
+        }
+      }
+    }
+    
+    .center {
+      
+      p {
+        margin: 0;
+        font-size: 17px;
+
+        span {
+          color: $accentGreen;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      .linkedin-container {
+        display: flex;
+        justify-content: center;
+        
+        svg {
+          cursor: pointer;
+          height: 30px;
+          fill: $bg;
+          
+          &:hover {
+            fill: $accentGreen;
+          }
+        }
+      }
+      
+      .github-container {
+        display: flex;
+        justify-content: center;
+        
+        svg {
+          cursor: pointer;
+          fill: $bg;
+          height: 30px;
+
+          &:hover {
+            fill: $accentGreen;
+          }
+        }
+      }
+    }
+  }
+}

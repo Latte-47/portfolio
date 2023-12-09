@@ -9,15 +9,25 @@ export default function Header() {
       <div className="header-top-separator" />
       <div className="header-contents">
         <div className="left">
-          <div className="name">VIPLAV K.</div>
+          <Link href={"*"}>
+            <div className="name">VIPLAV K.</div>
+          </Link>
         </div>
         <div className="center">
-          <div className="skills">SKILLS</div>
-          <div className="projects">PROJECTS</div>
-          <div className="about">ABOUT</div>
+          <Link href={"#skills-section"}>
+            <div className="skills">SKILLS</div>
+          </Link>
+          <Link href={"#projects-container"}>
+            <div className="projects">PROJECTS</div>
+          </Link>
+          <Link href={"#about-section"}>
+            <div className="about">ABOUT</div>
+          </Link>
         </div>
         <div className="right">
-          <div className="contact">CONTACT</div>
+          <Link href={"#contact-section"}>
+            <div className="contact">CONTACT</div>
+          </Link>
         </div>
       </div>
       <div className="header-bottom-separator" />

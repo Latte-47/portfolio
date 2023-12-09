@@ -1,0 +1,80 @@
+@use "@/app/scss/variables" as *;
+
+#about-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 100px 150px;
+
+    .about-title {
+      font-family: $fontOpenSansBold;
+      font-size: 30px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: row;
+      padding-top: 100px;
+      height: 40vh;
+      justify-content: center;
+      align-items: center;
+
+      .about-image {
+        position: relative;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .container-main {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+          .container-div-one {
+            background-color: $accentGreen;
+            width: 100px;
+            height: 110px;
+            position: absolute;
+            left: -120px;
+            top: -165px;
+          }
+          
+          .container-div-two {
+            position: absolute;
+            width: 186px;
+            height: 278px;
+            overflow: hidden;
+            z-index: 10;
+          }
+  
+          .container-div-three {
+            background-color: $accentGreen;
+            width: 100px;
+            height: 110px;
+            position: absolute;
+            right: -120px;
+            bottom: -165px;
+          }
+        }
+
+      }
+
+      .about-text {
+        width: 50%;
+      }
+    }
+  }
+}

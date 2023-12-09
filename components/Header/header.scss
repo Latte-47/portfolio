@@ -8,7 +8,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: $bg;
-  opacity: .95;
+  opacity: 0.95;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -26,13 +26,19 @@ header {
     align-items: center;
 
     .left {
-      .name {
-        font-size: 22px;
-        cursor: pointer;
+
+      a {
+        color: $textBlack;
+        text-decoration: none;
 
         &:hover {
           color: $textGray;
         }
+      }
+
+      .name {
+        font-size: 22px;
+        cursor: pointer;
       }
     }
 
@@ -41,10 +47,15 @@ header {
       flex-direction: row;
       gap: 40px;
 
+      a {
+        color: $textBlack;
+      }
+
       .skills,
       .projects,
       .about {
-        display: flex;
+        position: relative;
+        display: inline-flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -56,9 +67,65 @@ header {
         border-radius: 15px;
         font-size: 15px;
         cursor: pointer;
+      }
 
-        &:hover {
-          text-decoration: underline;
+      .skills {
+        &::after {
+          position: absolute;
+          content: "";
+          width: 50%;
+          height: 1px;
+          background: $textBlack;
+          transition: transform 0.25s ease-out;
+          transform-origin: bottom right;
+          transform: scaleX(0);
+          margin-top: 15px;
+        }
+
+        &:hover::after {
+          transform-origin: bottom left;
+          transform: scaleX(1);
+          width: 50%;
+        }
+      }
+
+      .projects {
+        &::after {
+          position: absolute;
+          content: "";
+          width: 70%;
+          height: 1px;
+          background: $textBlack;
+          transition: transform 0.25s ease-out;
+          transform-origin: bottom right;
+          transform: scaleX(0);
+          margin-top: 15px;
+        }
+
+        &:hover::after {
+          transform-origin: bottom left;
+          transform: scaleX(1);
+          width: 70%;
+        }
+      }
+
+      .about {
+        &::after {
+          position: absolute;
+          content: "";
+          width: 55%;
+          height: 1px;
+          background: $textBlack;
+          transition: transform 0.25s ease-out;
+          transform-origin: bottom right;
+          transform: scaleX(0);
+          margin-top: 15px;
+        }
+
+        &:hover::after {
+          transform-origin: bottom left;
+          transform: scaleX(1);
+          width: 55%;
         }
       }
     }
@@ -67,8 +134,13 @@ header {
       display: flex;
       flex-direction: row;
 
+      a {
+        color: $textBlack;
+      }
+
       .contact {
-        display: flex;
+        position: relative;
+        display: inline-flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -82,8 +154,22 @@ header {
         background-color: $accentGreen;
         cursor: pointer;
 
-        &:hover {
-          text-decoration: underline;
+        &::after {
+          position: absolute;
+          content: "";
+          width: 70%;
+          height: 1px;
+          background: $textBlack;
+          transition: transform 0.25s ease-out;
+          transform-origin: bottom right;
+          transform: scaleX(0);
+          margin-top: 15px;
+        }
+
+        &:hover::after {
+          transform-origin: bottom left;
+          transform: scaleX(1);
+          width: 70%;
         }
       }
     }
