@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./scss/_globals.scss";
 
+import { AnimatePresence } from "framer-motion";
+
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 

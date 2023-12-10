@@ -1,15 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import "./projects.scss";
 
 import SourceCode from "@/components/Icons/SourceCode";
 import ViewProject from "@/components/Icons/ViewProject";
 
 import tkpImage from "@/public/assets/images/tkp-webpage.png";
-import Link from "next/link";
 
 export default function Projects() {
   return (
     <section id="projects-section">
+      <div id="projects-anchor" />
       <div id="projects-container">
         <div className="title">PROJECTS</div>
         <div className="projects-list">

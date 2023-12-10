@@ -41,6 +41,10 @@ header {
       }
     }
 
+    .not-home {
+      display: none;
+    }
+
     .center {
       display: flex;
       flex-direction: row;
@@ -137,7 +141,7 @@ header {
         color: $textBlack;
       }
 
-      .contact {
+      .contact, .go-back {
         position: relative;
         display: inline-flex;
         flex-direction: row;

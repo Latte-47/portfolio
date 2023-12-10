@@ -2,5 +2,191 @@
 
 #projects-page-section {
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #projects-container {
+    padding: 250px 150px 100px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-family: $fontOpenSansBold;
+      font-size: 30px;
+      margin-top: -145px;
+    }
+
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      width: calc(100vw - 150px - 150px);
+      padding-top: 50px;
+      font-family: $fontOpenSansLight;
+      gap: 25px;
+
+      .projectOne {
+        width: 100%;
+        height: auto;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: $textBlack;
+        color: $bg;
+
+        &:hover {
+          background-color: $textGray;
+        }
+
+        .left {
+          border-right-style: solid;
+          border-width: 1px;
+          border-color: black;
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .left-top {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+
+            .project-title {
+              margin: 0;
+              font-family: $fontOpenSansItalic;
+              font-size: 30px;
+            }
+
+            .project-tools {
+              display: flex;
+              flex-direction: row;
+
+              ul {
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                gap: 20px;
+                margin: 0;
+                padding: 5px 0;
+                font-size: 13px;
+                font-family: $fontOpenSans;
+              }
+            }
+          }
+
+          .left-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 20px 40px 20px;
+
+            .project-year {
+              margin: 0;
+            }
+
+            .project-type {
+              margin: 0;
+            }
+          }
+
+          .left-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+
+            .project-source {
+              display: flex;
+              flex-direction: row;
+              gap: 5px;
+              align-items: center;
+              cursor: pointer;
+
+              &:hover {
+                color: $accentGreen;
+
+                svg {
+                  fill: $accentGreen;
+                }
+              }
+              svg {
+                fill: $bg;
+              }
+
+              p {
+                margin: 0;
+                font-size: 15px;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        .right {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 20px;
+          width: 70%;
+
+          .project-content {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .project-description {
+              text-align: left;
+            }
+
+            .project-live {
+              display: flex;
+              flex-direction: row;
+              gap: 5px;
+              width: fit-content;
+              align-items: center;
+              text-decoration: underline;
+              cursor: pointer;
+
+              svg {
+                fill: $bg;
+              }
+
+              p {
+                margin: 0;
+              }
+
+              &:hover {
+                color: $accentGreen;
+
+                svg {
+                  fill: $accentGreen;
+                }
+              }
+            }
+          }
+
+          .project-image {
+            position: relative;
+            width: 40%;
+            height: auto;
+            border-radius: 15px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
 }

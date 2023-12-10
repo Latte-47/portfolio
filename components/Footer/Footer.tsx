@@ -1,6 +1,8 @@
 "use-client"
 
 import "./footer.scss";
+import Link from "next/link";
+
 import Github from "@/components/Icons/Github";
 import Linkedin from "@/components/Icons/Linkedin";
 
@@ -26,10 +28,14 @@ export default function Footer() {
         </div>
         <div className="right">
           <div className="linkedin-container">
-            <Linkedin />
+            <Link href={"https://www.linkedin.com/in/viplav-kamble-8543ba246/" } target="_blank">
+              <Linkedin />
+            </Link>
           </div>
           <div className="github-container">
-            <Github />
+            <Link href={"https://github.com/Latte-47"} target="_blank">
+              <Github />
+            </Link>
           </div>
         </div>
       </div>

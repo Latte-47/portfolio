@@ -10,6 +10,13 @@
   align-items: center;
   clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
 
+  #projects-anchor {
+    width: 0;
+    height: 0;
+    position: relative;
+    top: 150px;
+  }
+
   #projects-container {
     padding: 250px 150px;
     display: flex;
@@ -19,7 +26,6 @@
     .title {
       font-family: $fontOpenSansBold;
       font-size: 30px;
-      margin-top: -145px;
     }
 
     .projects-list {

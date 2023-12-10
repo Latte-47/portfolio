@@ -24,13 +24,13 @@ export default function Contact() {
             <div className="info-content">
               <div className="info-phone">
                 <p className="title">Phone</p>
-                <a href="" className="content">
+                <a href={`tel:${7264846950}`} className="content">
                   <p>+91-7264846950</p>
                 </a>
               </div>
               <div className="info-email">
                 <p className="title">Email</p>
-                <a href="" className="content">
+                <a href="mailto:viplavvkamble747@gmail.com" className="content">
                   <p>viplavvkamble747@gmail.com</p>
                 </a>
               </div>
