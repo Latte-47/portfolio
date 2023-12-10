@@ -5,6 +5,7 @@ import SourceCode from "@/components/Icons/SourceCode";
 import ViewProject from "@/components/Icons/ViewProject";
 
 import tkpImage from "@/public/assets/images/tkp-webpage.png";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -60,7 +61,9 @@ export default function Projects() {
             </div>
           </div>
           <div className="projects-all">
-            <div className="content">view all projects</div>
+            <div className="content">
+              <Link href={"projects"}>view all projects</Link>
+            </div>
           </div>
         </div>
       </div>

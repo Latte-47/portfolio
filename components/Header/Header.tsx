@@ -9,7 +9,7 @@ export default function Header() {
       <div className="header-top-separator" />
       <div className="header-contents">
         <div className="left">
-          <Link href={"*"}>
+          <Link href={"#hero-section"}>
             <div className="name">VIPLAV K.</div>
           </Link>
         </div>
