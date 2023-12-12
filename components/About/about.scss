@@ -18,6 +18,7 @@
     .about-title {
       font-family: $fontOpenSansBold;
       font-size: 30px;
+      opacity: 0;
     }
 
     .about-content {
@@ -35,6 +36,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        opacity: 0;
 
         .container-main {
           position: relative;
@@ -74,6 +76,7 @@
 
       .about-text {
         width: 50%;
+        opacity: 0;
       }
     }
   }

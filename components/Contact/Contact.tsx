@@ -4,15 +4,65 @@ import { useState, useRef } from "react";
 import "./contact.scss";
 import emailjs from "@emailjs/browser";
 
-
 export default function Contact() {
-  const formRef = useRef();
+  const formRef = useRef(null);
 
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: any) => {
+    const { target } = e;
+    const { name, value } = target;
+
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSend = (e: any) => {
+    e.preventDefault();
+    setLoading(true);
+
+    let service_id = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    let template_id = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    let public_key = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    emailjs
+      .send(
+        `${service_id}`,
+        `${template_id}`,
+        {
+          from_name: form.name,
+          to_name: "Viplav",
+          from_email: form.email,
+          to_email: "viplavvkamble747@gmail.com",
+          message: form.message,
+        },
+        `${public_key}`
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank you, I will get back to you as soon as possible.");
+
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+
+          console.log(error);
+
+          alert("Something went wrong.");
+        }
+      );
+  };
 
   return (
     <section id="contact-section">
@@ -37,23 +87,44 @@ export default function Contact() {
             </div>
           </div>
           <div className="contact-form">
-            <form className="form-content">
+            <form className="form-content" ref={formRef} onSubmit={handleSend}>
               <div className="content-one">
                 <div className="name">
                   <label htmlFor="name">Name:</label>
-                  <input placeholder="Enter your name"></input>
+                  <input
+                    type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="Enter your name"
+                    required
+                  ></input>
                 </div>
                 <div className="email">
                   <label>Email:</label>
-                  <input placeholder="Enter your email"></input>
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email"
+                    required
+                  ></input>
                 </div>
               </div>
               <div className="message">
                 <label>Message:</label>
-                <textarea placeholder="Enter your message"></textarea>
+                <textarea
+                  rows={4}
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Enter your message"
+                  required
+                ></textarea>
               </div>
-              <button className="send" type="button">
-                Send
+              <button className="send" type="submit">
+                {loading ? "Sending..." : "Send"}
               </button>
             </form>
           </div>

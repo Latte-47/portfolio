@@ -1,18 +1,34 @@
+"use client";
+
 import Image from "next/image";
 import "./about.scss";
+import { useAnimate, useInView } from "framer-motion";
 
 import placeHolderImg from "@/public/assets/images/placeholder-img.jpg";
+import { useEffect, useRef } from "react";
 
 export default function About() {
+  const [scope, animate] = useAnimate();
+  const animateRef = useRef(null);
+  const isInView = useInView(animateRef, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      animate(".about-title", { opacity: 1, y: [-20, 0] }, { duration: 0.3 });
+      animate(".about-image", { opacity: 1, x: [-100, 0] }, { duration: 0.3 });
+      animate(".about-text", { opacity: 1, x: [100, 0] }, { duration: 0.3 });
+    }
+  });
+
   return (
     <section id="about-section">
-      <div className="about-container">
+      <div className="about-container" ref={scope}>
         <div className="about-title">ABOUT</div>
         <div className="about-content">
           <div className="about-image">
             <div className="container-main">
               <div className="container-div-one"></div>
-              <div className="container-div-two">
+              <div className="container-div-two"  ref={animateRef}>
                 <Image
                   fill
                   src={placeHolderImg}
