@@ -2,19 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  motion,
-  useScroll,
-  useInView,
-  useAnimate,
-} from "framer-motion";
 import "./projects.scss";
 
 import SourceCode from "@/components/Icons/SourceCode";
 import ViewProject from "@/components/Icons/ViewProject";
 
 import tkpImage from "@/public/assets/images/tkp-webpage.png";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const projectsList = [
   {
@@ -48,28 +45,22 @@ const projectsList = [
 ];
 
 export default function Projects() {
-  const animateRef = useRef(null);
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(animateRef, { once: true });
-  // const { scrollYProgress } = useScroll({
-  //   target: animateRef,
-  //   offset: ["center end", "start center"],
-  // });
-
   useEffect(() => {
-    if (isInView) {
-      animate(".title", { opacity: [0, 1], y: [-20, 0] }, { duration: 0.3 });
-      animate(".enter-left", { opacity: 1, x: [-300, 0] }, { duration: 0.3 });
-      animate(".enter-right", { opacity: 1, x: [300, 0] }, { duration: 0.3 });
-      animate(".projects-all", { opacity: 1, y: [20, 0] }, { duration: 0.3 });
-    }
-  });
+    AOS.init();
+  }, []);
 
   return (
     <section id="projects-section">
       <div id="projects-anchor" />
-      <div id="projects-container" ref={scope}>
-        <div className="title">PROJECTS</div>
+      <div id="projects-container">
+        <div
+          className="title"
+          data-aos="fade"
+          data-aos-easing="ease-out"
+          data-aos-once="true"
+        >
+          PROJECTS
+        </div>
         <div className="projects-list">
           {projectsList.map((project, index) => (
             <div
@@ -77,7 +68,11 @@ export default function Projects() {
                 index % 2 == 0 ? "enter-left" : "enter-right"
               }`}
               key={index}
-              ref={animateRef}
+              data-aos={`${index % 2 == 0 ? "fade-right" : "fade-left"}`}
+              data-aos-once="true"
+              data-aos-duration="500"
+              data-aos-easing="ease-out-back"
+              data-aos-anchor-placement="center-bottom"
             >
               <div className="left">
                 <div className="left-top">
@@ -134,11 +129,16 @@ export default function Projects() {
               </div>
             </div>
           ))}
-          <div className="projects-all">
+          {/* <div
+            className="projects-all"
+            data-aos="fade-up"
+            data-aos-easing="ease-out-back"
+            data-aos-once="true"
+          >
             <div className="content">
               <Link href={"projects"}>view all projects</Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

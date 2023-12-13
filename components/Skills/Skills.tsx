@@ -9,8 +9,10 @@ import Javascript from "../Icons/Javascript";
 import React from "../Icons/React";
 import NextJs from "../Icons/NextJs";
 import Sanity from "../Icons/Sanity";
-import { useAnimate, stagger, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const skillsList = [
   {
@@ -44,31 +46,40 @@ const skillsList = [
 ];
 
 export default function Skills() {
-  const [scope, animate] = useAnimate();
-  const animationRef = useRef(null);
-  const isInView = useInView(animationRef, { once: true });
 
   useEffect(() => {
-    
-    if (isInView) {
-      animate(".skills", { opacity: [0, 1], x: [-100, 0] }, { delay: stagger(0.1) });
-      animate(".title", { opacity: [0, 1], y: [-20, 0] }, { duration: 0.3 })
-    }
-  }, [isInView]);
+    AOS.init();
+  }, []);
 
   return (
     <section id="skills-section">
-      <div className="skills-container" ref={scope}>
-        <div className="title">SKILLS</div>
+      <div className="skills-container">
+        <div
+          className="title"
+          data-aos="fade"
+          data-aos-once="true"
+          data-aos-easing="ease-out"
+        >
+          SKILLS
+        </div>
         <ul className="skills-content">
           {skillsList.map((item, index) => (
-            <li className="skills" key={index}>
+            <li
+              className="skills"
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${index * 50}`}
+              data-aos-once="true"
+              data-aos-anchor=".skills-content"
+              data-aos-offset="175"
+              data-aos-easing="ease-out"
+            >
               <div className="icon-container">{item.icon}</div>
               <div className="name">{item.name}</div>
             </li>
           ))}
         </ul>
-        <div className="animation-ref" ref={animationRef} />
+        <div className="animation-ref" />
       </div>
     </section>
   );

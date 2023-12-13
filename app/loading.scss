@@ -1,0 +1,13 @@
+@use "@/app/scss/variables" as *;
+
+#loading-screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: $textBlack;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $bg;
+  z-index: 999;
+}

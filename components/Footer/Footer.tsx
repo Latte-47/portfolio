@@ -1,5 +1,3 @@
-"use-client"
-
 import "./footer.scss";
 import Link from "next/link";
 
@@ -13,22 +11,21 @@ export default function Footer() {
         <div className="left">
           <p>
             PORTFOLIO/
-            <span>
-              2023
-            </span>
+            <span>2023</span>
           </p>
         </div>
         <div className="center">
           <p>
             Designed and Developed by&nbsp;
-            <span>
-              Viplav Kamble
-            </span>
+            <span>Viplav Kamble</span>
           </p>
         </div>
         <div className="right">
           <div className="linkedin-container">
-            <Link href={"https://www.linkedin.com/in/viplav-kamble-8543ba246/" } target="_blank">
+            <Link
+              href={"https://www.linkedin.com/in/viplav-kamble-8543ba246/"}
+              target="_blank"
+            >
               <Linkedin />
             </Link>
           </div>
@@ -40,5 +37,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

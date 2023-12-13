@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./scss/_globals.scss";
 
-import { AnimatePresence } from "framer-motion";
-
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
@@ -18,10 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/ico" href="./favicon.ico" />
+      </head>
       <body>
-        <Header />
+        {/* <Header /> */}
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -1,22 +1,45 @@
 "use client";
 
 import "./hero.scss";
-import { useAnimate, stagger } from "framer-motion";
 import { useEffect } from "react";
 
-export default function Hero() {
-  const [scope, animate] = useAnimate();
+import AOS from "aos";
+import "aos/dist/aos.css";
 
+export default function Hero() {
   useEffect(() => {
-    animate("div", { opacity: [0, 1], x: [-100, 0] }, { delay: stagger(0.2) });
+    AOS.init();
   });
 
   return (
     <section id="hero-section">
-      <div className="title-container" ref={scope}>
-        <div className="title-one">VIPLAV</div>
-        <div className="title-two">KAMBLE</div>
-        <div className="title-three">FRONT-END DEVELOPER</div>
+      <div className="title-container">
+        <div
+          className="title-one"
+          data-aos="fade-right"
+          data-aos-once="true"
+          data-aos-easing="ease-out-back"
+        >
+          VIPLAV
+        </div>
+        <div
+          className="title-two"
+          data-aos="fade-right"
+          data-aos-once="true"
+          data-aos-easing="ease-out-back"
+          data-aos-delay="100"
+        >
+          KAMBLE
+        </div>
+        <div
+          className="title-three"
+          data-aos="fade-right"
+          data-aos-once="true"
+          data-aos-easing="ease-out-back"
+          data-aos-delay="200"
+        >
+          FRONT-END DEVELOPER
+        </div>
       </div>
     </section>
   );

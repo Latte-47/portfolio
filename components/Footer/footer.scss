@@ -5,10 +5,10 @@ footer {
   height: 75px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: $textBlack;
-  opacity: 0.95;
+  opacity: 1;
   color: $bg;
   font-family: $fontOpenSansLight;
 
@@ -21,6 +21,11 @@ footer {
     align-items: center;
 
     .left {
+      width: 33%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
 
       p {
         margin: 0;
@@ -33,7 +38,12 @@ footer {
     }
     
     .center {
-      
+      width: 33%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
       p {
         margin: 0;
         font-size: 17px;
@@ -45,9 +55,10 @@ footer {
     }
 
     .right {
+      width: 33%;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
       gap: 15px;
 

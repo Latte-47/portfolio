@@ -1,8 +1,11 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./contact.scss";
 import emailjs from "@emailjs/browser";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -64,12 +67,30 @@ export default function Contact() {
       );
   };
 
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
     <section id="contact-section">
       <div className="contact-container">
-        <div className="contact-title">CONTACT</div>
+        <div
+          className="contact-title"
+          data-aos="fade"
+          data-aos-easing="ease-out"
+          data-aos-once="true"
+        >
+          CONTACT
+        </div>
         <div className="contact-content">
-          <div className="contact-info">
+          <div
+            className="contact-info"
+            data-aos="fade-right"
+            data-aos-easing="ease-out-back"
+            data-aos-once="true"
+            data-aos-anchor=".contact-title"
+            data-aos-offset="300"
+          >
             <div className="info-title">Let&apos;s get in touch</div>
             <div className="info-content">
               <div className="info-phone">
@@ -86,7 +107,14 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <div className="contact-form">
+          <div
+            className="contact-form"
+            data-aos="fade-left"
+            data-aos-easing="ease-out-back"
+            data-aos-once="true"
+            data-aos-anchor=".contact-title"
+            data-aos-offset="300"
+          >
             <form className="form-content" ref={formRef} onSubmit={handleSend}>
               <div className="content-one">
                 <div className="name">

@@ -6,7 +6,8 @@ import ViewProject from "@/components/Icons/ViewProject";
 
 import tkpImage from "@/public/assets/images/tkp-webpage.png";
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+
   return (
     <section id="projects-page-section">
       <div id="projects-container">

@@ -2,33 +2,40 @@
 
 import Image from "next/image";
 import "./about.scss";
-import { useAnimate, useInView } from "framer-motion";
 
 import placeHolderImg from "@/public/assets/images/placeholder-img.jpg";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function About() {
-  const [scope, animate] = useAnimate();
-  const animateRef = useRef(null);
-  const isInView = useInView(animateRef, { once: true });
-
   useEffect(() => {
-    if (isInView) {
-      animate(".about-title", { opacity: 1, y: [-20, 0] }, { duration: 0.3 });
-      animate(".about-image", { opacity: 1, x: [-100, 0] }, { duration: 0.3 });
-      animate(".about-text", { opacity: 1, x: [100, 0] }, { duration: 0.3 });
-    }
+    AOS.init();
   });
 
   return (
     <section id="about-section">
-      <div className="about-container" ref={scope}>
-        <div className="about-title">ABOUT</div>
+      <div className="about-container">
+        <div
+          className="about-title"
+          data-aos="fade"
+          data-aos-easing="ease-out"
+          data-aos-once="true"
+        >
+          ABOUT
+        </div>
         <div className="about-content">
-          <div className="about-image">
+          <div
+            className="about-image"
+            data-aos="fade-right"
+            data-aos-easing="ease-out-back"
+            data-aos-once="true"
+            data-aos-anchor=".about-title"
+            data-aos-offset="300"
+          >
             <div className="container-main">
               <div className="container-div-one"></div>
-              <div className="container-div-two"  ref={animateRef}>
+              <div className="container-div-two">
                 <Image
                   fill
                   src={placeHolderImg}
@@ -39,7 +46,14 @@ export default function About() {
               <div className="container-div-three"></div>
             </div>
           </div>
-          <div className="about-text">
+          <div
+            className="about-text"
+            data-aos="fade-left"
+            data-aos-easing="ease-out-back"
+            data-aos-once="true"
+            data-aos-anchor=".about-title"
+            data-aos-offset="300"
+          >
             <p>
               I&apos;ve been a tech-enthusiast since before I even knew how to
               spell “enthusiast”. It was a given that I would find a career in

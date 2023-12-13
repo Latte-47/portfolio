@@ -26,7 +26,7 @@
     .title {
       font-family: $fontOpenSansBold;
       font-size: 30px;
-      opacity: 0;
+      // opacity: 0;
     }
 
     .projects-list {
@@ -47,7 +47,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        opacity: 0;
+        // opacity: 0;
 
         &:hover {
           background-color: $textGray;
@@ -243,7 +243,7 @@
         border-radius: 20px;
         border-color: black;
         margin-top: 100px;
-        opacity: 0;
+        // opacity: 0;
 
         &:hover {
           background-color: $textGray;

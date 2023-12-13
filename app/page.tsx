@@ -5,10 +5,14 @@ import Projects from "@/components/Projects/Projects";
 import About from "@/components/About/About";
 import QuoteTwo from "@/components/QuoteTwo/QuoteTwo";
 import Contact from "@/components/Contact/Contact";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
-export default function Home() {
+export default async function Home() {
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
   return (
     <>
+      <Header />
       <Hero />
       <QuoteOne />
       <Skills />
@@ -16,6 +20,7 @@ export default function Home() {
       <About />
       <QuoteTwo />
       <Contact />
+      <Footer />
     </>
-  )
+  );
 }
