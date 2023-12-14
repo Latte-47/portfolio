@@ -25,6 +25,11 @@ header {
     align-items: center;
 
     .left {
+      width: 33%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
 
       a {
         color: $textBlack;
@@ -36,7 +41,7 @@ header {
       }
 
       .name {
-        font-size: 22px;
+        font-size: 2.2rem;
         cursor: pointer;
       }
     }
@@ -46,9 +51,12 @@ header {
     }
 
     .center {
+      width: 33%;
       display: flex;
       flex-direction: row;
-      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
 
       a {
         color: $textBlack;
@@ -68,7 +76,7 @@ header {
         border-width: 1px;
         border-color: $textBlack;
         border-radius: 15px;
-        font-size: 15px;
+        font-size: 1.5rem;
         cursor: pointer;
       }
 
@@ -134,14 +142,18 @@ header {
     }
 
     .right {
+      width: 33%;
       display: flex;
       flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
 
       a {
         color: $textBlack;
       }
 
-      .contact, .go-back {
+      .contact,
+      .go-back {
         position: relative;
         display: inline-flex;
         flex-direction: row;
@@ -153,7 +165,7 @@ header {
         border-width: 1px;
         border-color: $textBlack;
         border-radius: 15px;
-        font-size: 15px;
+        font-size: 1.5rem;
         background-color: $accentGreen;
         cursor: pointer;
 
@@ -183,4 +195,30 @@ header {
     height: 2px;
     background-color: $textBlack;
   }
+}
+
+//*-----> Tablets Portrait
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+}
+
+//*-----> Tablets Landscape
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+}
+
+//*-----> Mobile Phones Large
+@media screen and (max-width: 767px) {
+  header {
+    .header-contents {
+
+      .center {
+        display: none;
+      }
+    }
+  }
+}
+
+//*-----> Mobile Phones Small
+@media screen and (max-width: 320px) {
 }

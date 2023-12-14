@@ -14,25 +14,27 @@ export default function Hero() {
   return (
     <section id="hero-section">
       <div className="title-container">
-        <div
-          className="title-one"
-          data-aos="fade-right"
-          data-aos-once="true"
-          data-aos-easing="ease-out-back"
-        >
-          VIPLAV
+        <div className="title-name">
+          <div
+            className="name-one"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-easing="ease-out-back"
+          >
+            VIPLAV
+          </div>
+          <div
+            className="name-two"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-easing="ease-out-back"
+            data-aos-delay="100"
+          >
+            KAMBLE
+          </div>
         </div>
         <div
-          className="title-two"
-          data-aos="fade-right"
-          data-aos-once="true"
-          data-aos-easing="ease-out-back"
-          data-aos-delay="100"
-        >
-          KAMBLE
-        </div>
-        <div
-          className="title-three"
+          className="title"
           data-aos="fade-right"
           data-aos-once="true"
           data-aos-easing="ease-out-back"

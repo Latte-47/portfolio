@@ -11,27 +11,150 @@
   .title-container {
     display: flex;
     flex-direction: column;
-    padding: 0 150px;
+    padding: 100px 150px;
 
-    li {
-      list-style: none;
+    .title-name {
+      .name-one {
+        font-size: 90px;
+        line-height: 30px;
+        letter-spacing: -2px;
+      }
+
+      .name-two {
+        font-size: 90px;
+      }
     }
 
-    .title-one {
-      font-size: 90px;
-      line-height: 30px;
-      letter-spacing: -2px;
-    }
-
-    .title-two {
-      font-size: 90px;
-    }
-
-    .title-three {
+    .title {
       font-size: 70px;
       line-height: 50px;
       color: $textGray;
+      font-family: $fontOpenSansLight;
     }
   }
 }
 
+//*-----> Tablets
+// @media screen and (max-width: 1024px) {
+//   #hero-section {
+
+//     .title-container {
+
+//       .title-one {
+//         font-size: 60px;
+//         line-height: 20px;
+//       }
+
+//       .title-two {
+//         font-size: 60px;
+//       }
+
+//       .title-three {
+//         font-size: 50px;
+//         line-height: 30px;
+//       }
+//     }
+//   }
+// }
+
+//*-----> Tablets Portrait
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #hero-section {
+    align-items: center;
+
+    .title-container {
+      align-items: center;
+      justify-content: center;
+      padding: 100px 100px;
+
+      .title-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+
+        .name-one {
+          font-size: 7rem;
+          letter-spacing: 2px;
+        }
+
+        .name-two {
+          font-size: 7rem;
+          letter-spacing: 2px;
+        }
+      }
+
+      .title {
+        font-size: 6rem;
+        letter-spacing: 3px;
+      }
+    }
+  }
+}
+
+//*-----> Tablets Landscape
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  #hero-section {
+    .title-container {
+      padding: 100px 100px;
+      .title-name {
+        .name-one {
+          font-size: 4rem;
+          line-height: 20px;
+        }
+
+        .name-two {
+          font-size: 4rem;
+        }
+      }
+
+      .title {
+        font-size: 3.5rem;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+//*-----> Mobile Phones Large
+@media screen and (max-width: 767px) {
+  #hero-section {
+    align-items: center;
+
+    .title-container {
+      align-items: center;
+      justify-content: center;
+      padding: 75px 30px;
+
+      .title-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: .6rem;
+
+        .name-one {
+          font-size: 1.8rem;
+          letter-spacing: 1px;
+        }
+
+        .name-two {
+          font-size: 1.8rem;
+          letter-spacing: 1px;
+        }
+      }
+
+      .title {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+//*-----> Mobile Phones Small
+@media screen and (max-width: 320px) {
+
+}

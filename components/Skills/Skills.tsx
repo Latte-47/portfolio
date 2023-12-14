@@ -46,7 +46,6 @@ const skillsList = [
 ];
 
 export default function Skills() {
-
   useEffect(() => {
     AOS.init();
   }, []);
@@ -62,24 +61,25 @@ export default function Skills() {
         >
           SKILLS
         </div>
-        <ul className="skills-content">
-          {skillsList.map((item, index) => (
-            <li
-              className="skills"
-              key={index}
-              data-aos="fade-right"
-              data-aos-delay={`${index * 50}`}
-              data-aos-once="true"
-              data-aos-anchor=".skills-content"
-              data-aos-offset="175"
-              data-aos-easing="ease-out"
-            >
-              <div className="icon-container">{item.icon}</div>
-              <div className="name">{item.name}</div>
-            </li>
-          ))}
-        </ul>
-        <div className="animation-ref" />
+        <div className="skills-content">
+          <ul className="skills-list">
+            {skillsList.map((item, index) => (
+              <div
+                className="skills"
+                key={index}
+                data-aos="fade-right"
+                data-aos-delay={`${index * 50}`}
+                data-aos-once="true"
+                data-aos-anchor=".skills-content"
+                data-aos-offset="175"
+                data-aos-easing="ease-out"
+              >
+                <div className="icon-container">{item.icon}</div>
+                <div className="name">{item.name}</div>
+              </div>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

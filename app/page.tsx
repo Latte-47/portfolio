@@ -12,7 +12,7 @@ export default async function Home() {
   // await new Promise((resolve) => setTimeout(resolve, 3000));
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <QuoteOne />
       <Skills />
@@ -20,7 +20,7 @@ export default async function Home() {
       <About />
       <QuoteTwo />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

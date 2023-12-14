@@ -8,7 +8,7 @@ import SourceCode from "@/components/Icons/SourceCode";
 import ViewProject from "@/components/Icons/ViewProject";
 
 import tkpImage from "@/public/assets/images/tkp-webpage.png";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -25,7 +25,7 @@ const projectsList = [
     as a CMS.`,
     image: tkpImage,
     imageAlt: "tkpImage",
-    sourceCode: "",
+    sourceCode: "a",
     projectLive: "https://thekapdaproject.vercel.app/",
   },
   {
@@ -39,19 +39,21 @@ const projectsList = [
     as a CMS.`,
     image: tkpImage,
     imageAlt: "tkpImage",
-    sourceCode: "",
+    sourceCode: "a",
     projectLive: "https://thekapdaproject.vercel.app/",
   },
 ];
 
 export default function Projects() {
+  const [enterTop, setEnterTop] = useState(true);
+  const [exitTop, setExitTop] = useState(true);
+
   useEffect(() => {
     AOS.init();
   }, []);
 
   return (
     <section id="projects-section">
-      <div id="projects-anchor" />
       <div id="projects-container">
         <div
           className="title"
@@ -64,7 +66,7 @@ export default function Projects() {
         <div className="projects-list">
           {projectsList.map((project, index) => (
             <div
-              className={`projectOne ${
+              className={`project ${
                 index % 2 == 0 ? "enter-left" : "enter-right"
               }`}
               key={index}
@@ -73,7 +75,27 @@ export default function Projects() {
               data-aos-duration="500"
               data-aos-easing="ease-out-back"
               data-aos-anchor-placement="center-bottom"
+              onMouseEnter={(event) => {
+                const element = event.currentTarget;
+                const rect = element.getBoundingClientRect();
+                const enterIsTop = event.clientY < rect.top + rect.height / 2;
+                enterIsTop ? setEnterTop(true) : setEnterTop(false);
+              }}
+              onMouseLeave={(event) => {
+                const exitElement = event.currentTarget;
+                const exitRect = exitElement.getBoundingClientRect();
+                const exitIsTop =
+                  event.clientY < exitRect.top + exitRect.height / 2;
+                exitIsTop ? setExitTop(true) : setExitTop(false);
+              }}
             >
+              <div className="hover-container">
+                <div
+                  className={`
+                  ${enterTop ? "on-hover-top" : "on-hover-bottom"} 
+                  ${exitTop ? "hover-exit-top" : "hover-exit-bottom"}`}
+                />
+              </div>
               <div className="left">
                 <div className="left-top">
                   <p className="project-title">{project.title}</p>

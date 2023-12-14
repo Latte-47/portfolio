@@ -2,53 +2,75 @@
 
 #skills-section {
   width: 100vw;
-  height: 85vh;
+  // height: 85vh;
 
   .skills-container {
     padding: 100px 150px;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     .title {
       font-family: $fontOpenSansBold;
       font-size: 30px;
+      height: 30%;
       // opacity: 0;
     }
 
     .skills-content {
+      height: 70%;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 5vw;
-      flex-wrap: wrap;
-      width: 45vw;
-      padding: 100px 0 0 0;
-      
-      .skills {
+
+      .skills-list {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        // opacity: 0;
+        gap: 5vw;
+        flex-wrap: wrap;
+        width: 45vw;
 
-        .name {
-          font-size: 14px;
-        }
+        .skills {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          // opacity: 0;
 
-        .icon-container {
+          .name {
+            font-size: 14px;
+          }
 
-          svg {
-            width: 60px;
+          .icon-container {
+            svg {
+              width: 60px;
+            }
           }
         }
       }
     }
-
-    .animation-ref {
-      margin-top: -250px;
-    }
   }
+}
+
+//*-----> Tablets Portrait
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #skills-section {
+  }
+}
+
+//*-----> Tablets Landscape
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+}
+
+//*-----> Mobile Phones Large
+@media screen and (max-width: 767px) {
+}
+
+//*-----> Mobile Phones Small
+@media screen and (max-width: 320px) {
 }
