@@ -189,6 +189,18 @@ header {
         }
       }
     }
+
+    .menu-button {
+      display: none;
+    }
+
+    .menu-opened, .menu-closed {
+      display: none;
+
+      .mask-active, .mask-inactive {
+        display: none;
+      }
+    }
   }
 
   .header-bottom-separator {
