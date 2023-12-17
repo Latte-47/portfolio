@@ -181,7 +181,7 @@
 }
 
 //*-----> Tablets Portrait
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (max-width: 1024px) {
   #contact-section {
     .contact-container {
       width: calc(100vw - 100px);
@@ -270,12 +270,68 @@
   }
 }
 
-//*-----> Tablets Landscape
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-}
-
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
+  #contact-section {
+    .contact-container {
+      width: calc(100vw - 40px);
+      padding: 150px 20px;
+
+      .contact-title {
+        font-size: 2.6rem;
+      }
+
+      .contact-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 50px;
+
+        .contact-info {
+          width: 100%;
+          align-items: center;
+          gap: 40px;
+
+          .info-title {
+            font-size: 2.4rem;
+          }
+
+          .info-content {
+            align-items: center;
+            text-align: center;
+            gap: 25px;
+          }
+        }
+        .contact-form {
+          width: 100%;
+
+          .form-content {
+            justify-content: center;
+            align-items: center;
+
+            .content-one {
+              flex-direction: column;
+              width: 100%;
+              gap: 15px;
+
+              .name {
+                display: block;
+                width: 100%;
+              }
+
+              .email {
+                display: block;
+                width: 100%;
+              }
+            }
+
+            .message {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 //*-----> Mobile Phones Small

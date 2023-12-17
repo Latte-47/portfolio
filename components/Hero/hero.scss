@@ -37,30 +37,7 @@
 }
 
 //*-----> Tablets
-// @media screen and (max-width: 1024px) {
-//   #hero-section {
-
-//     .title-container {
-
-//       .title-one {
-//         font-size: 60px;
-//         line-height: 20px;
-//       }
-
-//       .title-two {
-//         font-size: 60px;
-//       }
-
-//       .title-three {
-//         font-size: 50px;
-//         line-height: 30px;
-//       }
-//     }
-//   }
-// }
-
-//*-----> Tablets Portrait
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (max-width: 1024px) {
   #hero-section {
     align-items: center;
 
@@ -95,30 +72,6 @@
   }
 }
 
-//*-----> Tablets Landscape
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  #hero-section {
-    .title-container {
-      padding: 100px 100px;
-      .title-name {
-        .name-one {
-          font-size: 4rem;
-          line-height: 20px;
-        }
-
-        .name-two {
-          font-size: 4rem;
-        }
-      }
-
-      .title {
-        font-size: 3.5rem;
-        line-height: 30px;
-      }
-    }
-  }
-}
-
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
   #hero-section {
@@ -127,7 +80,7 @@
     .title-container {
       align-items: center;
       justify-content: center;
-      padding: 75px 30px;
+      padding: 75px 20px;
 
       .title-name {
         display: flex;
@@ -137,18 +90,18 @@
         gap: .6rem;
 
         .name-one {
-          font-size: 1.8rem;
+          font-size: 3.5rem;
           letter-spacing: 1px;
         }
 
         .name-two {
-          font-size: 1.8rem;
+          font-size: 3.5rem;
           letter-spacing: 1px;
         }
       }
 
       .title {
-        font-size: 1.5rem;
+        font-size: 3rem;
         line-height: 1.8rem;
         letter-spacing: 1px;
       }

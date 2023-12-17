@@ -84,8 +84,8 @@
   }
 }
 
-//*-----> Tablets Portrait
-@media only screen and (max-device-width: 1024px) and (orientation: portrait) {
+//*-----> Tablets
+@media only screen and (max-width: 1024px) {
   #about-section {
     .about-container {
       padding: 150px 50px;
@@ -128,12 +128,59 @@
   }
 }
 
-//*-----> Tablets Landscape
-@media only screen and (max-device-width: 1024px) and (orientation: landscape) {
-}
-
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
+  #about-section {
+    width: 100vw;
+
+    .about-container {
+      padding: 150px 20px;
+      width: calc(100vw - 40px);
+
+      .about-title {
+        font-size: 2.6rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+        width: 100%;
+        padding: 150px 0 0 0;
+
+        .about-image {
+          height: 100px;
+          width: 100%;
+
+          .container-main {
+            .container-div-one {
+              width: 70px;
+              height: 80px;
+              left: -95px;
+              top: -135px;
+            }
+
+            .container-div-two {
+              width: 150px;
+              height: 225px;
+            }
+
+            .container-div-three {
+              width: 70px;
+              height: 80px;
+              right: -95px;
+              bottom: -135px;
+            }
+          }
+        }
+
+        .about-text {
+          width: 100%;
+          padding-top: 125px;
+          font-size: 1.6rem;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 //*-----> Mobile Phones Small

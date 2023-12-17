@@ -105,6 +105,7 @@ export default function Header() {
               smooth={true}
               duration={500}
               spy={true}
+              onClick={() => {setIsOpen(false)}}
             >
               <div className="menu-skills">SKILLS</div>
             </ScrollLink>
@@ -115,6 +116,7 @@ export default function Header() {
               smooth={true}
               duration={500}
               spy={true}
+              onClick={() => {setIsOpen(false)}}
             >
               <div className="menu-projects">PROJECTS</div>
             </ScrollLink>
@@ -124,6 +126,7 @@ export default function Header() {
               smooth={true}
               duration={500}
               spy={true}
+              onClick={() => {setIsOpen(false)}}
             >
               <div className="menu-about">ABOUT</div>
             </ScrollLink>

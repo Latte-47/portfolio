@@ -192,12 +192,12 @@
               flex-direction: row;
               gap: 5px;
               align-items: center;
-              
+
               svg {
                 fill: $bg;
                 width: 22px;
               }
-              
+
               p {
                 font-size: 1.5rem;
                 text-decoration: underline;
@@ -264,12 +264,12 @@
                 gap: 5px;
                 align-items: center;
                 text-decoration: underline;
-                
+
                 svg {
                   fill: $bg;
                   width: 22px;
                 }
-                
+
                 p {
                   font-size: 1.5rem;
                   text-decoration: underline;
@@ -340,8 +340,8 @@
   }
 }
 
-//*-----> Tablets Portrait
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+//*-----> Tablets
+@media only screen and (max-width: 1024px) {
   #projects-section {
     #projects-container {
       padding: 400px 50px;
@@ -446,12 +446,110 @@
   }
 }
 
-//*-----> Tablets Landscape
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-}
-
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
+  #projects-section {
+    clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+
+    #projects-container {
+      padding: 300px 20px;
+
+      .title {
+        font-size: 2.6rem;
+      }
+
+      .projects-list {
+        width: calc(100vw - 40px);
+        padding-top: 75px;
+
+        .project {
+          height: auto;
+          flex-direction: column;
+          height: 600px;
+          width: 100%;
+
+          .hover-container {
+            display: none;
+          }
+
+          .left {
+            border-right-style: none;
+            border-bottom-style: solid;
+            width: calc(100vw - 80px);
+            height: 30%;
+
+            .left-top {
+              .project-title {
+                font-size: 2.4rem;
+              }
+
+              .project-tools {
+                ul {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+
+            .left-center {
+
+              .project-year, .project-type {
+                font-size: 1.5rem;
+              }
+            }
+
+            .left-bottom {
+              .project-source {
+                svg {
+                  width: 20px;
+                }
+
+                p {
+                  font-size: 1.3rem;
+                }
+              }
+            }
+          }
+
+          .right {
+            width: calc(100vw - 80px);
+            height: 70%;
+            flex-direction: column-reverse;
+
+            .project-content {
+              width: 100%;
+              height: 40%;
+              flex-direction: column;
+
+              .right-top {
+                .project-description {
+                  font-size: 1.5rem;
+                }
+              }
+
+              .right-bottom {
+                .project-live {
+                  align-items: center;
+
+                  svg {
+                    width: 20px;
+                  }
+
+                  p {
+                    font-size: 1.3rem;
+                  }
+                }
+              }
+            }
+
+            .project-image {
+              width: 100%;
+              height: 55%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 //*-----> Mobile Phones Small

@@ -38,8 +38,8 @@
   }
 }
 
-//*-----> Tablets Portrait
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+//*-----> Tablets
+@media only screen and (max-width: 1024px) {
   #quoteOne-section {
     .quote-container {
       padding: 50px 50px;
@@ -56,14 +56,23 @@
   }
 }
 
-//*-----> Tablets Landscape
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
-}
-
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
+  #quoteOne-section {
+    .quote-container {
+      padding: 60px 20px;
 
+      .quote {
+        font-size: 1.3rem;
+      }
+
+      .credit {
+        left: 0;
+        padding-top: 10px;
+        font-size: 1.2rem;
+      }
+    }
+  }
 }
 
 //*-----> Mobile Phones Small

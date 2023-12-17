@@ -8,8 +8,8 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: $bg;
-  position: fixed;
-  top: 0;
+  position: fixed !important;
+  top: 0 !important;
   z-index: 995;
 
   .header-top-separator {
@@ -209,6 +209,8 @@ header {
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
   header {
+
+
     .header-contents {
       width: calc(100vw - 40px);
 
@@ -267,7 +269,7 @@ header {
         background-color: $textBlack;
         border-radius: 25px 0 25px 25px;
         transform: scale(0);
-        transition: transform 0.25s;
+        transition: transform 0.25s ease-out;
         transform-origin: top right;
         z-index: 998;
 
@@ -303,7 +305,7 @@ header {
         justify-content: center;
         transform: scale(1);
         transform-origin: top right;
-        transition: transform 0.25s;
+        transition: transform 0.25s ease-out;
 
         .menu-container {
           z-index: 998;
