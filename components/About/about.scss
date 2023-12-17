@@ -2,14 +2,15 @@
 
 #about-section {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  
+
   .about-container {
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: start;
     align-items: center;
@@ -17,17 +18,16 @@
 
     .about-title {
       font-family: $fontOpenSansBold;
-      font-size: 30px;
-      // opacity: 0;
+      font-size: 3rem;
     }
 
     .about-content {
       display: flex;
       flex-direction: row;
-      padding-top: 100px;
-      height: 40vh;
+      height: 100%;
       justify-content: center;
       align-items: center;
+      padding: 150px 0;
 
       .about-image {
         position: relative;
@@ -36,7 +36,6 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        // opacity: 0;
 
         .container-main {
           position: relative;
@@ -51,53 +50,92 @@
             height: 110px;
             position: absolute;
             left: -120px;
-            top: -165px;
+            top: -163px;
           }
-          
+
           .container-div-two {
             position: absolute;
-            width: 186px;
-            height: 278px;
+            width: 180px;
+            height: 269px;
             overflow: hidden;
             z-index: 10;
           }
-  
+
           .container-div-three {
             background-color: $accentGreen;
             width: 100px;
             height: 110px;
             position: absolute;
             right: -120px;
-            bottom: -165px;
+            bottom: -163px;
           }
         }
-
       }
 
       .about-text {
         width: 50%;
-        // opacity: 0;
+        font-size: 1.65rem;
+
+        p {
+          padding: 10px 0;
+        }
       }
     }
   }
 }
 
 //*-----> Tablets Portrait
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait) {
+  #about-section {
+    .about-container {
+      padding: 150px 50px;
 
+      .about-title {
+        font-size: 3.5rem;
+      }
+
+      .about-content {
+        padding: 100px 0 0 0;
+
+        .about-image {
+          .container-main {
+            .container-div-one {
+              width: 80px;
+              height: 88px;
+              left: -105px;
+              top: -145px;
+            }
+
+            .container-div-two {
+              width: 160px;
+              height: 239px;
+            }
+
+            .container-div-three {
+              width: 80px;
+              height: 88px;
+              right: -105px;
+              bottom: -145px;
+            }
+          }
+        }
+
+        .about-text {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
 }
 
 //*-----> Tablets Landscape
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
+@media only screen and (max-device-width: 1024px) and (orientation: landscape) {
 }
 
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
-
 }
 
 //*-----> Mobile Phones Small
 @media screen and (max-width: 320px) {
-
 }

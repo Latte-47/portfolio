@@ -2,7 +2,7 @@
 
 #quoteTwo-section {
   width: 100vw;
-  height: 25vh;
+  height: auto;
   background-color: $textBlack;
   color: $bg;
   display: flex;
@@ -16,14 +16,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 150px;
+    padding: 50px 150px;
 
     .quote {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 22px;
+      font-size: 2.2rem;
 
       span {
         display: block;
@@ -33,27 +33,37 @@
     .credit {
       position: relative;
       left: 450px;
-      font-size: 20px;
+      font-size: 2rem;
     }
   }
 }
 
 //*-----> Tablets Portrait
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #quoteTwo-section {
+    .quote-container {
+      padding: 50px 50px;
 
+      .quote {
+        font-size: 2.1rem;
+      }
+
+      .credit {
+        left: 300px;
+        font-size: 1.9rem;
+      }
+    }
+  }
 }
 
 //*-----> Tablets Landscape
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
 }
 
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
-
 }
 
 //*-----> Mobile Phones Small
 @media screen and (max-width: 320px) {
-
 }

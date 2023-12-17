@@ -2,7 +2,6 @@
 
 #skills-section {
   width: 100vw;
-  // height: 85vh;
 
   .skills-container {
     padding: 100px 150px;
@@ -14,9 +13,8 @@
 
     .title {
       font-family: $fontOpenSansBold;
-      font-size: 30px;
+      font-size: 3rem;
       height: 30%;
-      // opacity: 0;
     }
 
     .skills-content {
@@ -43,7 +41,7 @@
           // opacity: 0;
 
           .name {
-            font-size: 14px;
+            font-size: 1.4rem;
           }
 
           .icon-container {
@@ -60,6 +58,39 @@
 //*-----> Tablets Portrait
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   #skills-section {
+
+    .skills-container {
+      padding: 200px 50px;
+      height: 60vh;
+      
+      .title {
+        font-size: 3.5rem;
+      }
+
+      .skills-content {
+        justify-content: flex-start;
+        padding: 0 0 50px 0;
+
+        .skills-list {
+          gap: 10vw;
+          width: 50vw;
+
+          .skills {
+
+            .name {
+              font-size: 1.7rem;
+            }
+
+            .icon-container {
+
+              svg {
+                width: 70px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 

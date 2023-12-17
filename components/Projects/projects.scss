@@ -161,10 +161,7 @@
             height: 50%;
             font-family: $fontOpenSansLight;
 
-            .project-year {
-              font-size: 1.5rem;
-            }
-
+            .project-year,
             .project-type {
               font-size: 1.5rem;
             }
@@ -195,6 +192,16 @@
               flex-direction: row;
               gap: 5px;
               align-items: center;
+              
+              svg {
+                fill: $bg;
+                width: 22px;
+              }
+              
+              p {
+                font-size: 1.5rem;
+                text-decoration: underline;
+              }
 
               &:hover {
                 color: $accentGreen;
@@ -202,16 +209,6 @@
                 svg {
                   fill: $accentGreen;
                 }
-              }
-
-              svg {
-                fill: $bg;
-                width: 22px;
-              }
-
-              p {
-                font-size: 1.5rem;
-                text-decoration: underline;
               }
             }
           }
@@ -238,7 +235,6 @@
                 font-family: $fontOpenSansLight;
                 text-align: left;
                 font-size: 1.4rem;
-                // font-family: $fontOpenSansLight;
               }
             }
 
@@ -255,6 +251,7 @@
               display: flex;
               flex-direction: column;
               justify-content: flex-end;
+              align-self: flex-start;
               font-family: $fontOpenSansLight;
 
               a {
@@ -265,9 +262,18 @@
                 display: flex;
                 flex-direction: row;
                 gap: 5px;
-                width: fit-content;
                 align-items: center;
                 text-decoration: underline;
+                
+                svg {
+                  fill: $bg;
+                  width: 22px;
+                }
+                
+                p {
+                  font-size: 1.5rem;
+                  text-decoration: underline;
+                }
 
                 &:hover {
                   color: $accentGreen;
@@ -275,16 +281,6 @@
                   svg {
                     fill: $accentGreen;
                   }
-                }
-
-                svg {
-                  fill: $bg;
-                  width: 22px;
-                }
-
-                p {
-                  font-size: 1.5rem;
-                  text-decoration: underline;
                 }
               }
             }
@@ -346,6 +342,108 @@
 
 //*-----> Tablets Portrait
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #projects-section {
+    #projects-container {
+      padding: 400px 50px;
+
+      .title {
+        font-size: 3.5rem;
+      }
+
+      .projects-list {
+        padding-top: 200px;
+        width: calc(100vw - 100px);
+        gap: 20px;
+
+        .project {
+          height: 200px;
+
+          .hover-container {
+            width: calc(100vw - 100px);
+            height: 200px;
+          }
+
+          .on-hover-top {
+            width: calc(100vw - 100px);
+            height: 200px;
+          }
+
+          .hover-exit-bottom {
+            width: calc(100vw - 100px);
+            height: 200px;
+          }
+
+          .on-hover-bottom {
+            width: calc(100vw - 100px);
+            height: 200px;
+          }
+
+          .hover-exit-top {
+            width: calc(100vw - 100px);
+            height: 200px;
+          }
+
+          .left {
+            padding: 20px;
+
+            .left-top {
+              .project-title {
+                font-size: 2.3rem;
+              }
+
+              .project-tools {
+                ul {
+                  gap: 18px;
+                  font-size: 1.2rem;
+                }
+              }
+            }
+
+            .left-center {
+              .project-year,
+              .project-type {
+                font-size: 1.35rem;
+              }
+            }
+
+            .left-bottom {
+              .project-source {
+                svg {
+                  width: 20px;
+                }
+
+                p {
+                  font-size: 1.3rem;
+                }
+              }
+            }
+          }
+
+          .right {
+            .project-content {
+              .right-top {
+                .project-description {
+                  font-size: 1.35rem;
+                }
+              }
+
+              .right-bottom {
+                .project-live {
+                  svg {
+                    width: 20px;
+                  }
+
+                  p {
+                    font-size: 1.3rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 //*-----> Tablets Landscape

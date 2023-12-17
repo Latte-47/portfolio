@@ -19,14 +19,16 @@
         line-height: 30px;
         letter-spacing: -2px;
       }
-
+      
       .name-two {
         font-size: 90px;
+        letter-spacing: -2px;
       }
     }
 
     .title {
       font-size: 70px;
+      letter-spacing: 2px;
       line-height: 50px;
       color: $textGray;
       font-family: $fontOpenSansLight;

@@ -7,11 +7,6 @@ import Footer from "@/components/Footer/Footer";
 export const metadata: Metadata = {
   title: "Viplav Kamble | Front-end Developer",
   description: "Hi, I'm a front-end dev.",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    minimumScale: 1,
-  },
 };
 
 export default function RootLayout({

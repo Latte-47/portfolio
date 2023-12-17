@@ -10,7 +10,7 @@ header {
   background-color: $bg;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 995;
 
   .header-top-separator {
     width: 95%;
@@ -167,6 +167,7 @@ header {
         border-radius: 15px;
         font-size: 1.5rem;
         background-color: $accentGreen;
+        z-index: 995;
         cursor: pointer;
 
         &::after {
@@ -199,21 +200,162 @@ header {
 
 //*-----> Tablets Portrait
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-
 }
 
 //*-----> Tablets Landscape
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
 }
 
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
   header {
     .header-contents {
+      width: calc(100vw - 40px);
+
+      .left {
+        .name {
+          font-size: 1.8rem;
+        }
+      }
 
       .center {
         display: none;
+      }
+
+      .right {
+        .contact {
+          width: 90px;
+          height: 27px;
+          font-size: 1.3rem;
+        }
+      }
+
+      .menu-button {
+        width: 10%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        z-index: 999;
+
+        svg {
+          width: 30px;
+        }
+      }
+
+      .mask-inactive {
+        display: none;
+      }
+
+      .mask-active {
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 996;
+      }
+
+      .menu-closed {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        width: 200px;
+        height: 300px;
+        background-color: $textBlack;
+        border-radius: 25px 0 25px 25px;
+        transform: scale(0);
+        transition: transform 0.25s;
+        transform-origin: top right;
+        z-index: 998;
+
+        .menu-container {
+
+          .menu-separator {
+            width: 70%;
+            height: 1px;
+            transform: scaleX(0);
+          }
+
+          .menu-skills,
+          .menu-projects,
+          .menu-about {
+            opacity: 0;
+          }
+        }
+      }
+
+      .menu-opened {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 998;
+        background-color: $textBlack;
+        width: 200px;
+        height: 300px;
+        opacity: 0.97;
+        border-radius: 25px 0 25px 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1);
+        transform-origin: top right;
+        transition: transform 0.25s;
+
+        .menu-container {
+          z-index: 998;
+          color: $bg;
+          font-size: 1.5rem;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          padding: 75px 10px 3px 10px;
+
+          .menu-separator {
+            height: 1px;
+            background-color: $bg;
+            width: 70%;
+            transform: scaleX(1);
+            transition: transform .35s;
+            transition-delay: .25s;
+          }
+
+          .menu-skills,
+          .menu-projects,
+          .menu-about {
+            height: 74px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $bg;
+            font-size: 1.5rem;
+          }
+
+          .menu-skills {
+            opacity: 1;
+            transition: opacity 0.25s;
+            transition-delay: 0.25s;
+          }
+
+          .menu-projects {
+            opacity: 1;
+            transition: opacity 0.25s;
+            transition-delay: 0.35s;
+          }
+
+          .menu-about {
+            opacity: 1;
+            transition: opacity 0.25s;
+            transition-delay: 0.45s;
+          }
+        }
       }
     }
   }

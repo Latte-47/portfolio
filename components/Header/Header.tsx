@@ -3,14 +3,21 @@
 import { Link as ScrollLink } from "react-scroll";
 import "./header.scss";
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import MenuOpen from "../Icons/MenuOpen";
+import MenuClose from "../Icons/MenuClose";
 
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     AOS.init();
@@ -82,8 +89,45 @@ export default function Header() {
             </div>
           </ScrollLink>
         </div>
-        <div className="menu">
-          
+        <div className="menu-button" onClick={handleMenuClick}>
+          {isOpen ? <MenuClose /> : <MenuOpen />}
+        </div>
+        <div className={`${isOpen ? "menu-opened" : "menu-closed"}`}>
+          <div
+            className={`${isOpen ? "mask-active" : "mask-inactive"}`}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          />
+          <div className="menu-container">
+            <ScrollLink
+              to="skills-section"
+              smooth={true}
+              duration={500}
+              spy={true}
+            >
+              <div className="menu-skills">SKILLS</div>
+            </ScrollLink>
+            <div className="menu-separator" />
+            <ScrollLink
+              to="projects-section"
+              offset={+150}
+              smooth={true}
+              duration={500}
+              spy={true}
+            >
+              <div className="menu-projects">PROJECTS</div>
+            </ScrollLink>
+            <div className="menu-separator" />
+            <ScrollLink
+              to="about-section"
+              smooth={true}
+              duration={500}
+              spy={true}
+            >
+              <div className="menu-about">ABOUT</div>
+            </ScrollLink>
+          </div>
         </div>
       </div>
       <div className="header-bottom-separator" />

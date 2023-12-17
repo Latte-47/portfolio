@@ -8,9 +8,9 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: $textBlack;
-  opacity: 1;
   color: $bg;
   font-family: $fontOpenSansLight;
+  z-index: 990;
 
   .footer-container {
     width: calc(100vw - 50px - 50px);
@@ -28,15 +28,14 @@ footer {
       align-items: center;
 
       p {
-        margin: 0;
-        font-size: 17px;
-        
+        font-size: 1.7rem;
+
         span {
           color: $accentGreen;
         }
       }
     }
-    
+
     .center {
       width: 33%;
       display: flex;
@@ -45,8 +44,7 @@ footer {
       align-items: center;
 
       p {
-        margin: 0;
-        font-size: 17px;
+        font-size: 1.7rem;
 
         span {
           color: $accentGreen;
@@ -65,26 +63,26 @@ footer {
       .linkedin-container {
         display: flex;
         justify-content: center;
-        
+
         svg {
           cursor: pointer;
-          height: 30px;
+          width: 30px;
           fill: $bg;
-          
+
           &:hover {
             fill: $accentGreen;
           }
         }
       }
-      
+
       .github-container {
         display: flex;
         justify-content: center;
-        
+
         svg {
           cursor: pointer;
           fill: $bg;
-          height: 30px;
+          width: 30px;
 
           &:hover {
             fill: $accentGreen;
@@ -97,20 +95,45 @@ footer {
 
 //*-----> Tablets Portrait
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  footer {
+    .footer-container {
+      .left {
+        p {
+          font-size: 1.5rem;
+        }
+      }
 
+      .center {
+        p {
+          font-size: 1.5rem;
+        }
+      }
+
+      .right {
+        .linkedin-container {
+          svg {
+            width: 28px;
+          }
+        }
+
+        .github-container {
+          svg {
+            width: 28px;
+          }
+        }
+      }
+    }
+  }
 }
 
 //*-----> Tablets Landscape
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
 }
 
 //*-----> Mobile Phones Large
 @media screen and (max-width: 767px) {
-
 }
 
 //*-----> Mobile Phones Small
 @media screen and (max-width: 320px) {
-
 }

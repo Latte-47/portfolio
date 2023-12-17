@@ -42,14 +42,14 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   #quoteOne-section {
     .quote-container {
-      padding: 50px 100px;
+      padding: 50px 50px;
 
       .quote {
         font-size: 2.1rem;
       }
 
       .credit {
-        left: 350px;
+        left: 300px;
         font-size: 1.9rem;
       }
     }
