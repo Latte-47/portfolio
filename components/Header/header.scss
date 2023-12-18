@@ -10,6 +10,7 @@ header {
   background-color: $bg;
   position: fixed !important;
   top: 0 !important;
+  left: 0 !important;
   z-index: 995;
 
   .header-top-separator {
@@ -210,12 +211,8 @@ header {
   }
 }
 
-//*-----> Tablets Portrait
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-}
-
-//*-----> Tablets Landscape
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+//*-----> Tablets
+@media only screen and (max-width: 1024px) {
 }
 
 //*-----> Mobile Phones Large
@@ -245,6 +242,7 @@ header {
       }
 
       .menu-button {
+        display: block;
         width: 10%;
         height: 100%;
         display: flex;
@@ -262,6 +260,7 @@ header {
       }
 
       .mask-active {
+        display: block;
         position: absolute;
         right: 0;
         top: 0;
@@ -272,6 +271,7 @@ header {
       }
 
       .menu-closed {
+        display: block;
         position: absolute;
         right: 0;
         top: 0;
@@ -302,6 +302,7 @@ header {
       }
 
       .menu-opened {
+        display: block;
         position: absolute;
         right: 0;
         top: 0;
