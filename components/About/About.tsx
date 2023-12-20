@@ -8,6 +8,24 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// const aboutContent = [
+//   {
+//     image: placeHolderImg,
+//     text: `I've been a tech-enthusiast since before I even knew how to
+//   spell “enthusiast”. It was a given that I would find a career in
+//   coding.
+
+//   In 2022, I completed my bachelor's degree in mathematics and
+//   electronics. It was after that that I decided to put all my focus
+//   on practicing web development. I quickly took to the new concepts
+//   and continued learning more and more with each new project.
+
+//   In my free time, I usually play games learn a new song on the
+//   ukulele or go outside and find interesting new places.
+// `,
+//   },
+// ];
+
 export default function About() {
   useEffect(() => {
     AOS.init();
@@ -24,7 +42,12 @@ export default function About() {
         >
           ABOUT
         </div>
-        <div className="about-content">
+        {/* {aboutContent.map((about, index) => (
+        ))} */}
+        <div
+          className="about-content"
+          // key={index}
+        >
           <div
             className="about-image"
             data-aos="fade-right"
@@ -55,19 +78,21 @@ export default function About() {
             data-aos-offset="300"
           >
             <p>
-              I&apos;ve been a tech-enthusiast since before I even knew how to
-              spell “enthusiast”. It was a given that I would find a career in
-              coding.
+              Ever since I was younger, I&apos;ve been immersed in the world of
+              technology, and it was only natural that my journey led me to a
+              career in coding.
             </p>
             <p>
-              In 2022, I completed my bachelor&apos;s degree in mathematics and
-              electronics. It was after that that I decided to put all my focus
-              on practicing web development. I quickly took to the new concepts
-              and continued learning more and more with each new project.
+              Completing my bachelor&apos;s in mathematics and electronics in
+              2022, I redirected my efforts toward web development. Rapidly
+              adapting to fresh concepts, I sustained an ongoing cycle of
+              learning and growth with every new project.
             </p>
             <p>
-              In my free time, I usually play games learn a new song on the
-              ukulele or go outside and find interesting new places.
+              Beyond the lines of code, you&apos;ll find me immersed in diverse
+              interests. I&apos;m usually engrossed in a game, strumming a new
+              tune on my ukulele, or exploring the great outdoors in search of
+              fascinating new places.
             </p>
           </div>
         </div>

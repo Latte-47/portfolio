@@ -255,21 +255,7 @@ header {
         }
       }
 
-      .mask-inactive {
-        display: none;
-      }
-
-      .mask-active {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-        opacity: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 996;
-      }
-
+      
       .menu-closed {
         display: block;
         position: absolute;
@@ -284,15 +270,25 @@ header {
         transition: transform 0.25s ease-out;
         transform-origin: top right;
         z-index: 998;
+        border: solid 1px black;
+        border-right: none;
+        border-top: none;
 
+        .mask-inactive {
+          display: none;
+        }
+  
+        
         .menu-container {
-
+          display: block;
+          
           .menu-separator {
+            display: block;
             width: 70%;
             height: 1px;
             transform: scaleX(0);
           }
-
+          
           .menu-skills,
           .menu-projects,
           .menu-about {
@@ -300,7 +296,7 @@ header {
           }
         }
       }
-
+      
       .menu-opened {
         display: block;
         position: absolute;
@@ -310,7 +306,7 @@ header {
         background-color: $textBlack;
         width: 200px;
         height: 300px;
-        opacity: 0.97;
+        opacity: 0.98;
         border-radius: 25px 0 25px 25px;
         display: flex;
         flex-direction: column;
@@ -319,8 +315,23 @@ header {
         transform: scale(1);
         transform-origin: top right;
         transition: transform 0.25s ease-out;
+        border: solid 1px black;
+        border-right: none;
+        border-top: none;
+
+        .mask-active {
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          opacity: 0;
+          width: 100vw;
+          height: 100vh;
+          z-index: 996;
+        }
 
         .menu-container {
+          display: block;
           z-index: 998;
           color: $bg;
           font-size: 1.5rem;
@@ -330,9 +341,10 @@ header {
           flex-direction: column;
           justify-content: space-around;
           align-items: center;
-          padding: 75px 10px 3px 10px;
+          padding: 80px 10px 10px 10px;
 
           .menu-separator {
+            display: block;
             height: 1px;
             background-color: $bg;
             width: 70%;
@@ -344,29 +356,34 @@ header {
           .menu-skills,
           .menu-projects,
           .menu-about {
-            height: 74px;
+            display: block;
+            height: 100%;
             width: 200px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: $bg;
             font-size: 1.5rem;
+            cursor: pointer;
           }
 
           .menu-skills {
             opacity: 1;
+            height: 50px;
             transition: opacity 0.25s;
             transition-delay: 0.25s;
           }
 
           .menu-projects {
             opacity: 1;
+            height: 50px;
             transition: opacity 0.25s;
             transition-delay: 0.35s;
           }
 
           .menu-about {
             opacity: 1;
+            height: 50px;
             transition: opacity 0.25s;
             transition-delay: 0.45s;
           }

@@ -20,10 +20,10 @@ export default function QuoteTwo() {
         data-aos-once="true"
       >
         <div className="quote">
-          “There are only two hard things in Computer Science:&nbsp;
-          <span>cache invalidation and naming things.”</span>
+          &quot;Everyday life is like programming, I guess. If you love something,&nbsp;
+          <span>you can put beauty into it.&quot;</span>
         </div>
-        <div className="credit">- Phil Karlton</div>
+        <div className="credit">- Donald Knuth</div>
       </div>
     </section>
   );

@@ -19,27 +19,10 @@ const projectsList = [
     tools: ["NextJS", "SCSS", "GSAP", "Sanity"],
     year: "2023",
     type: "Front-end Development",
-    description: `A clothing website that strives to make sustainable, slow
-    fashion the norm. While developing this website, I got the
-    chance to work with GSAP for animations. Sanity was also used
-    as a CMS.`,
+    description: `A clothing website that strives to make sustainable, slow fashion the norm. In collaboration with couple of my acquaintances, I got to use and further hone my skills while working on the front-end aspect of several of this website's pages. While developing this website, I also got the chance to work with GSAP for animations and Sanity as CMS.`,
     image: tkpImage,
     imageAlt: "tkpImage",
-    sourceCode: "a",
-    projectLive: "https://thekapdaproject.vercel.app/",
-  },
-  {
-    title: "THE KAPDA PROJECT",
-    tools: ["NextJS", "SCSS", "GSAP", "Sanity"],
-    year: "2023",
-    type: "Front-end Development",
-    description: `A clothing website that strives to make sustainable, slow
-    fashion the norm. While developing this website, I got the
-    chance to work with GSAP for animations. Sanity was also used
-    as a CMS.`,
-    image: tkpImage,
-    imageAlt: "tkpImage",
-    sourceCode: "a",
+    sourceCode: "",
     projectLive: "https://thekapdaproject.vercel.app/",
   },
 ];

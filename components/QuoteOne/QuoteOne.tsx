@@ -21,8 +21,8 @@ export default function QuoteOne() {
         data-aos-once="true"
       >
         <div className="quote">
-          “There are only two hard things in Computer Science:&nbsp;
-          <span>cache invalidation and naming things.”</span>
+          &quot;There are only two hard things in Computer Science:&nbsp;
+          <span>cache invalidation and naming things.&quot;</span>
         </div>
         <div className="credit">- Phil Karlton</div>
       </div>

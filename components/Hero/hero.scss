@@ -15,19 +15,19 @@
 
     .title-name {
       .name-one {
-        font-size: 90px;
+        font-size: 8.5rem;
         line-height: 30px;
         letter-spacing: -2px;
       }
       
       .name-two {
-        font-size: 90px;
+        font-size: 8.5rem;
         letter-spacing: -2px;
       }
     }
 
     .title {
-      font-size: 70px;
+      font-size: 6.5rem;
       letter-spacing: 2px;
       line-height: 50px;
       color: $textGray;
@@ -101,7 +101,11 @@
       }
 
       .title {
-        font-size: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.8rem;
         line-height: 3rem;
         letter-spacing: 1px;
       }
