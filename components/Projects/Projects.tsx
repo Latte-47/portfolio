@@ -8,7 +8,8 @@ import SourceCode from "@/components/Icons/SourceCode";
 import ViewProject from "@/components/Icons/ViewProject";
 
 import tkpImage from "@/public/assets/images/tkp-webpage.png";
-import { useEffect, useRef, useState } from "react";
+import randomAdviceGen from "@/public/assets/images/randomAdviceGen-webpage.png";
+import { useEffect, useState } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -24,6 +25,17 @@ const projectsList = [
     imageAlt: "tkpImage",
     sourceCode: "",
     projectLive: "https://thekapdaproject.vercel.app/",
+  },
+  {
+    title: "RANDOM ADVICE GENERATOR",
+    tools: ["NextJS", "SCSS", "Advice Slip JSON API"],
+    year: "2023",
+    type: "Front-end Development",
+    description: `A website that lets you generate random advices. I got the idea from a frontendmentor.io challenge and gave it an extra feature that lists all the advices you get during the session. Utilizing the Advice Slip JSON API allowed me to practice working with an API.`,
+    image: randomAdviceGen,
+    imageAlt: "randomAdviceGen",
+    sourceCode: "https://github.com/Latte-47/advice-generator-app-using-nextjs",
+    projectLive: "https://randomadvicegenerator.vercel.app/",
   },
 ];
 
@@ -124,12 +136,14 @@ export default function Projects() {
                   </div>
                 </div>
                 <div className="project-image">
-                  <Image
-                    fill
-                    src={project.image}
-                    alt={project.imageAlt}
-                    style={{ objectFit: "cover" }}
-                  />
+                  <Link href={project.projectLive} target="_blank">
+                    <Image
+                      fill
+                      src={project.image}
+                      alt={project.imageAlt}
+                      style={{ objectFit: "cover" }}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
