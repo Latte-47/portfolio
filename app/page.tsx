@@ -8,8 +8,7 @@ import Contact from "@/components/Contact/Contact";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
-export default async function Home() {
-  // await new Promise((resolve) => setTimeout(resolve, 3000));
+export default function Home() {
   return (
     <>
       {/* <Header /> */}

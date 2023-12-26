@@ -104,7 +104,7 @@
             border-style: solid;
             border-width: 1px;
             border-color: black;
-            border-radius: 8px;
+            border-radius: 15px;
             padding: 10px;
             font-family: $fontOpenSansLight;
           }
@@ -123,7 +123,7 @@
 
               input {
                 width: calc(100% - 20px);
-                height: 40px;
+                height: 35px;
                 font-size: 1.5rem;
               }
             }
@@ -137,7 +137,7 @@
 
               input {
                 width: calc(100% - 20px);
-                height: 40px;
+                height: 35px;
                 font-size: 1.5rem;
               }
             }
@@ -159,20 +159,45 @@
           }
 
           .send {
-            width: 100px;
-            height: 40px;
+            width: 200px;
+            height: 35px;
             border: none;
-            border-radius: 8px;
-            background-color: $textBlack;
-            color: $bg;
+            border-style: solid;
+            border-color: black;
+            border-radius: 15px;
+            border-width: 1px;
+            background-color: $bg;
+            color: $textBlack;
             font-family: $fontOpenSans;
             font-size: 1.6rem;
-
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            transition: background-color .25s ease-out;
             cursor: pointer;
 
             &:hover {
-              color: $accentGreen;
-              background-color: $textGray;
+              transition: background-color .25s ease-out;
+              background-color: $accentGreen;
+            }
+
+            &::after {
+              position: absolute;
+              content: "";
+              width: 3.8%;
+              height: 1px;
+              background: $textBlack;
+              transition: transform 0.25s ease-out;
+              transform-origin: bottom right;
+              transform: scaleX(0);
+              margin-top: 15px;
+            }
+
+            &:hover::after {
+              transform-origin: bottom left;
+              transform: scaleX(1);
+              width: 3.8%;
             }
           }
         }
@@ -250,7 +275,6 @@
                   font-size: 1.3rem;
                   height: 35px;
                   width: 100%;
-
                 }
               }
             }
@@ -262,7 +286,6 @@
                 font-size: 1.3rem;
                 height: 100px;
                 width: 100%;
-
               }
             }
 

@@ -152,7 +152,7 @@ export default function Contact() {
                 ></textarea>
               </div>
               <button className="send" type="submit">
-                {loading ? "Sending..." : "Send"}
+                {loading ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>
