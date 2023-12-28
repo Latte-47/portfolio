@@ -34,7 +34,7 @@ export default function Header() {
   };
 
   return (
-    <header data-aos="slide-down" data-aos-easing="ease-out-back">
+    <header data-aos="slide-down" data-aos-easing="ease-out">
       <div className="header-top-separator" />
       <div className="header-contents">
         <div className="left">

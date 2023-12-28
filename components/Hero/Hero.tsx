@@ -1,11 +1,12 @@
 "use client";
 
 import "./hero.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 import useMousePosition from "@/utils/mousePosition";
+import useMouseClicked from "@/utils/mouseClicked";
 
 const heroContent = {
   firstName: "VIPLAV",
@@ -14,8 +15,42 @@ const heroContent = {
   titleTwo: "DEVELOPER",
 };
 
+const binaryContent = {
+  lineOne:
+    "01010110 01101001 01110000 01101100 01100001 01110110 00100000 01001011 01100001 01101101 01100010 01101100 01100101",
+  lineTwo:
+    "01000110 01110010 01101111 01101110 01110100 00101101 01000101 01101110 01100100",
+  lineThree:
+    "01000100 01100101 01110110 01100101 01101100 01101111 01110000 01100101 01110010",
+};
+
 export default function Hero() {
   const { x, y } = useMousePosition();
+  const mouseClicked = useMouseClicked();
+  const [semicircleClicked, setSemicircleClicked] = useState(false);
+  const scrollerBinary =
+    typeof document !== "undefined"
+      ? document.querySelectorAll(".binary")
+      : null;
+
+  if (scrollerBinary) {
+    const addAnimation = () => {
+      scrollerBinary.forEach((scroller) => {
+        scroller.setAttribute("data-animated", true);
+      });
+    };
+
+    // const scrollerLineOne = scroller.querySelector(".line-one");
+    // const scrollerContentOne = Array.from(scrollerLineOne.children);
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      addAnimation();
+    }
+    // scrollerContentOne.forEach(item => {
+    //   const duplicatedItem = item.cloneNode(true);
+    //   duplicatedItem.setAttribute("aria-hidden", true);
+    // })
+  }
 
   if (typeof document !== "undefined") {
     const mousePointer = document.getElementById("mouse-pointer");
@@ -32,66 +67,177 @@ export default function Hero() {
   const splitTitleOne = [{ letters: heroContent.titleOne.split("") }];
   const splitTitleTwo = [{ letters: heroContent.titleTwo.split("") }];
 
+  const splitLineOne = [{ letters: binaryContent.lineOne.split(" ") }];
+  const splitLineTwo = [{ letters: binaryContent.lineTwo.split(" ") }];
+  const splitLineThree = [{ letters: binaryContent.lineThree.split(" ") }];
+
   useEffect(() => {
     AOS.init();
   });
 
   return (
     <section id="hero-section">
-      <div id="mouse-pointer">
+      <div
+        id="mouse-pointer"
+        className={
+          mouseClicked ? "mouse-pointer-clicked" : "mouse-pointer-unclicked"
+        }
+      >
         <div className="mouse-aura" />
       </div>
-      <div className="title-container">
-        <div className="title-name">
-          {splitFirstName.map((letterGroup, index) => (
-            <div
-              className="name-one"
-              data-aos="fade-right"
-              data-aos-once="true"
-              data-aos-easing="ease-out-back"
-              key={index}
-            >
-              {letterGroup.letters.map((letter, i) => (
-                <p key={i}>{letter}</p>
-              ))}
-            </div>
-          ))}
-          {splitLastName.map((letterGroup, index) => (
-            <div
-              className="name-two"
-              data-aos="fade-right"
-              data-aos-once="true"
-              data-aos-easing="ease-out-back"
-              data-aos-delay="100"
-              key={index}
-            >
-              {letterGroup.letters.map((letter, i) => (
-                <p key={i}>{letter}</p>
-              ))}
-            </div>
-          ))}
+      <div className="title-main">
+        <div
+          className={
+            semicircleClicked ? "title-container-open" : "title-container-close"
+          }
+        >
+          <div className="title-name">
+            {splitFirstName.map((letterGroup, index) => (
+              <div
+                className="name-one"
+                data-aos="fade-right"
+                data-aos-once="true"
+                data-aos-easing="ease-out-back"
+                key={index}
+              >
+                {letterGroup.letters.map((letter, i) => (
+                  <p key={i}>{letter}</p>
+                ))}
+              </div>
+            ))}
+            {splitLastName.map((letterGroup, index) => (
+              <div
+                className="name-two"
+                data-aos="fade-right"
+                data-aos-once="true"
+                data-aos-easing="ease-out-back"
+                data-aos-delay="100"
+                key={index}
+              >
+                {letterGroup.letters.map((letter, i) => (
+                  <p key={i}>{letter}</p>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div
+            className="title"
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-easing="ease-out-back"
+            data-aos-delay="200"
+          >
+            {splitTitleOne.map((letterGroup, index) => (
+              <div className="title-one" key={index}>
+                {letterGroup.letters.map((letter, i) => (
+                  <p key={i}>{letter}</p>
+                ))}
+              </div>
+            ))}
+            {splitTitleTwo.map((letterGroup, index) => (
+              <div className="title-two" key={index}>
+                {letterGroup.letters.map((letter, i) => (
+                  <p key={i}>{letter}</p>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
         <div
-          className="title"
-          data-aos="fade-right"
+          className={
+            semicircleClicked
+              ? "title-semicircle-open"
+              : "title-semicircle-close"
+          }
+          data-aos="fade-left"
           data-aos-once="true"
-          data-aos-easing="ease-out-back"
-          data-aos-delay="200"
+          data-aos-easing="ease-out"
+          data-aos-delay="100"
         >
-          {splitTitleOne.map((letterGroup, index) => (
-            <div className="title-one" key={index}>
-              {letterGroup.letters.map((letter, i) => (
-                <p key={i}>{letter}</p>
+          <div
+            className="semicircle"
+            onMouseEnter={() => {
+              setSemicircleClicked(true);
+            }}
+            onMouseLeave={() => {
+              setSemicircleClicked(false);
+            }}
+          >
+            <div className="semicircle-aura" />
+          </div>
+          <div
+            className={
+              semicircleClicked ? "title-right-open" : "title-right-close"
+            }
+            onMouseEnter={() => {
+              setSemicircleClicked(true);
+            }}
+            onMouseLeave={() => {
+              setSemicircleClicked(false);
+            }}
+          >
+            <div className="binary">
+              {splitLineOne.map((letterGroup, index) => (
+                <div className="lines line-one" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 3 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 3 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
+              ))}
+              {splitLineTwo.map((letterGroup, index) => (
+                <div className="lines line-two" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 2 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 2 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
+              ))}
+              {splitLineThree.map((letterGroup, index) => (
+                <div className="lines line-three" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 4 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 4 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-          {splitTitleTwo.map((letterGroup, index) => (
-            <div className="title-two" key={index}>
-              {letterGroup.letters.map((letter, i) => (
-                <p key={i}>{letter}</p>
-              ))}
-            </div>
-          ))}
+          </div>
+          {/* <div
+          className={
+            semicircleClicked ? "title-right-open" : "title-right-close"
+          }
+          onMouseEnter={() => {
+            setSemicircleClicked(true);
+          }}
+          onMouseLeave={() => {
+            setSemicircleClicked(false);
+          }}
+        ></div> */}
         </div>
       </div>
     </section>
