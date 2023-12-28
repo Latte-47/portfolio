@@ -36,7 +36,7 @@ export default function Hero() {
   if (scrollerBinary) {
     const addAnimation = () => {
       scrollerBinary.forEach((scroller) => {
-        scroller.setAttribute("data-animated", true);
+        scroller.setAttribute("data-animated", "true");
       });
     };
 
