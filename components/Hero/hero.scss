@@ -285,40 +285,13 @@
           opacity: 0;
           transition: opacity 0.5s ease-out;
         }
-      }
-    }
-
-    .hero-mask:hover + .mask-div {
-      transform: scale(1);
-      transition-delay: 0.3s;
-
-      .mask-content {
-        .content {
-          transform: translateY(0);
-          opacity: 1;
-          transition: 0.2s ease-out;
-          transition-delay: 0.8s;
-        }
-      }
-
-      .mask-bg {
-        width: calc(100vw);
-        height: calc(100vh - 200px);
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        opacity: 1;
 
         .binary-top {
-          opacity: 1;
-          transition: opacity 0.5s ease-out 0.8s;
           max-width: calc(100vw);
           font-size: 20px;
-          overflow: hidden;
           display: flex;
           flex-direction: column;
+          overflow: hidden;
 
           .lines {
             display: flex;
@@ -334,10 +307,6 @@
               color: $accentGreen;
             }
           }
-        }
-
-        .binary-top[data-animated="true"] {
-          overflow: hidden;
           -webkit-mask: linear-gradient(
             90deg,
             transparent,
@@ -399,13 +368,11 @@
         }
 
         .binary-bottom {
-          opacity: 1;
-          transition: opacity 0.5s ease-out 0.8s;
           max-width: calc(100vw);
           font-size: 20px;
-          overflow: hidden;
           display: flex;
           flex-direction: column-reverse;
+          overflow: hidden;
 
           .lines {
             display: flex;
@@ -421,10 +388,7 @@
               color: $accentGreen;
             }
           }
-        }
 
-        .binary-bottom[data-animated="true"] {
-          overflow: hidden;
           -webkit-mask: linear-gradient(
             90deg,
             transparent,
@@ -484,6 +448,42 @@
               transform: translate(0);
             }
           }
+        }
+      }
+    }
+
+    .hero-mask:hover + .mask-div {
+      transform: scale(1);
+      transition-delay: 0.3s;
+
+      .mask-content {
+        .content {
+          transform: translateY(0);
+          opacity: 1;
+          transition: 0.2s ease-out;
+          transition-delay: 0.8s;
+        }
+      }
+
+      .mask-bg {
+        width: calc(100vw);
+        height: calc(100vh - 200px);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        opacity: 1;
+
+        .binary-top {
+          opacity: 1;
+          transition: opacity 0.5s ease-out 0.5s;
+          
+        }
+
+        .binary-bottom {
+          opacity: 1;
+          transition: opacity 0.5s ease-out 0.5s;
         }
       }
     }
