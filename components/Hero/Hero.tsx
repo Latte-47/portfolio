@@ -27,29 +27,38 @@ const binaryContent = {
 export default function Hero() {
   const { x, y } = useMousePosition();
   const mouseClicked = useMouseClicked();
-  const [semicircleClicked, setSemicircleClicked] = useState(false);
-  const scrollerBinary =
+  const scrollerBinaryTop =
     typeof document !== "undefined"
-      ? document.querySelectorAll(".binary")
+      ? document.querySelectorAll(".binary-top")
       : null;
 
-  if (scrollerBinary) {
+  if (scrollerBinaryTop) {
     const addAnimation = () => {
-      scrollerBinary.forEach((scroller) => {
+      scrollerBinaryTop.forEach((scroller) => {
         scroller.setAttribute("data-animated", "true");
       });
     };
 
-    // const scrollerLineOne = scroller.querySelector(".line-one");
-    // const scrollerContentOne = Array.from(scrollerLineOne.children);
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      addAnimation();
+    }
+  }
+
+  const scrollerBinaryBottom =
+    typeof document !== "undefined"
+      ? document.querySelectorAll(".binary-bottom")
+      : null;
+
+  if (scrollerBinaryBottom) {
+    const addAnimation = () => {
+      scrollerBinaryBottom.forEach((scroller) => {
+        scroller.setAttribute("data-animated", "true");
+      });
+    };
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       addAnimation();
     }
-    // scrollerContentOne.forEach(item => {
-    //   const duplicatedItem = item.cloneNode(true);
-    //   duplicatedItem.setAttribute("aria-hidden", true);
-    // })
   }
 
   if (typeof document !== "undefined") {
@@ -86,11 +95,7 @@ export default function Hero() {
         <div className="mouse-aura" />
       </div>
       <div className="title-main">
-        <div
-          className={
-            semicircleClicked ? "title-container-open" : "title-container-close"
-          }
-        >
+        <div className="title-container">
           <div className="title-name">
             {splitFirstName.map((letterGroup, index) => (
               <div
@@ -144,6 +149,169 @@ export default function Hero() {
           </div>
         </div>
         <div
+          className="hero-mask"
+          data-aos="fade"
+          data-aos-once="true"
+          data-aos-easing="ease-out"
+          data-aos-delay="200"
+        >
+          <div className="mask-aura" />
+        </div>
+        <div className="mask-div">
+          <div className="mask-bg">
+            <div className="binary-top">
+              {splitLineOne.map((letterGroup, index) => (
+                <div className="lines line-one" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 3 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 3 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 3 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
+              ))}
+              {splitLineTwo.map((letterGroup, index) => (
+                <div className="lines line-two" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 2 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 2 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 2 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
+              ))}
+              {splitLineThree.map((letterGroup, index) => (
+                <div className="lines line-three" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 4 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 4 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 4 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div className="binary-bottom">
+              {splitLineOne.map((letterGroup, index) => (
+                <div className="lines line-one" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 3 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 3 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 3 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
+              ))}
+              {splitLineTwo.map((letterGroup, index) => (
+                <div className="lines line-two" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 2 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 2 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 2 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
+              ))}
+              {splitLineThree.map((letterGroup, index) => (
+                <div className="lines line-three" key={index}>
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 4 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 4 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                  {letterGroup.letters.map((letter, i) => (
+                    <p className={(i + 1) % 4 === 0 ? "green" : ""} key={i}>
+                      {letter}
+                      &nbsp;
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mask-content">
+            <div className="content content-left">
+              <h2>
+                Pixel Perfect <br />
+                Code
+              </h2>
+            </div>
+            <div className="content content-right">
+              <h2>
+                Picture-Perfect <br />
+                Designs
+              </h2>
+            </div>
+          </div>
+        </div>
+        {/* <div
           className={
             semicircleClicked
               ? "title-semicircle-open"
@@ -227,18 +395,7 @@ export default function Hero() {
               ))}
             </div>
           </div>
-          {/* <div
-          className={
-            semicircleClicked ? "title-right-open" : "title-right-close"
-          }
-          onMouseEnter={() => {
-            setSemicircleClicked(true);
-          }}
-          onMouseLeave={() => {
-            setSemicircleClicked(false);
-          }}
-        ></div> */}
-        </div>
+        </div> */}
       </div>
     </section>
   );

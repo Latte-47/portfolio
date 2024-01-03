@@ -71,122 +71,19 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 100px 0 100px 150px;
+    padding: 100px 150px 100px 150px;
 
-    .title-container-close {
+    .title-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-start;
       gap: 40px;
-      width: 60%;
-      height: 100vh;
-      z-index: 4;
-      background-color: $bg;
-      transform: translateX(0);
-      transition: 0.5s ease-out;
-
-      .title-name {
-        display: flex;
-        flex-direction: column;
-        gap: 45px;
-
-        .name-one {
-          font-size: 8.5rem;
-          line-height: 30px;
-          letter-spacing: -2px;
-          display: flex;
-          flex-direction: row;
-          z-index: 4;
-
-          p {
-            transform: translateY(0);
-            transition: 0.25s ease-in-out;
-
-            &:hover {
-              transform: translateY(-15px);
-              transition: 0.25s ease-in-out;
-              color: $accentGreen;
-            }
-          }
-        }
-
-        .name-two {
-          font-size: 8.5rem;
-          letter-spacing: -2px;
-          line-height: 30px;
-          display: flex;
-          flex-direction: row;
-          z-index: 2;
-
-          p {
-            transform: translateY(0);
-            transition: 0.25s ease-in-out;
-
-            &:hover {
-              transform: translateY(-15px);
-              transition: 0.25s ease-in-out;
-              color: $accentGreen;
-            }
-          }
-        }
-      }
-
-      .title {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-
-        .title-one {
-          font-size: 6.5rem;
-          letter-spacing: 2px;
-          line-height: 50px;
-          color: $textGray;
-          font-family: $fontOpenSansLight;
-          display: flex;
-          flex-direction: row;
-
-          p {
-            transform: translateY(0);
-            transition: transform 0.2s ease-in-out;
-
-            &:hover {
-              transform: translateY(-15px);
-              transition: transform 0.2s ease-in-out;
-            }
-          }
-        }
-
-        .title-two {
-          font-size: 6.5rem;
-          letter-spacing: 2px;
-          line-height: 50px;
-          color: $textGray;
-          font-family: $fontOpenSansLight;
-          display: flex;
-          flex-direction: row;
-
-          p {
-            transform: translateY(0);
-            transition: transform 0.2s ease-in-out;
-
-            &:hover {
-              transform: translateY(-15px);
-              transition: transform 0.2s ease-in-out;
-            }
-          }
-        }
-      }
-    }
-
-    .title-container-open {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 40px;
-      width: 60%;
-      height: 100vh;
+      width: calc(100% - 300px);
+      height: calc(100% - 200px);
       z-index: 4;
       background-color: $bg;
       transform: translateX(-10vw);
@@ -285,249 +182,143 @@
       }
     }
 
-    .title-semicircle-close {
-      width: 40%;
-      height: 100vh;
+    .hero-mask {
+      position: absolute;
       display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      background-color: $bg;
-      z-index: 4;
+      width: 75px;
+      height: 75px;
+      z-index: 990;
+      background-color: $textBlack;
+      // background-color: $bg;
+      border-radius: 75px;
+      transition: 0.5s ease-out;
 
-      .semicircle {
-        position: relative;
-        height: 200px;
-        width: 100px;
-        background-color: $textBlack;
-        border-radius: 200px 0 0 200px;
-        // transform: translateX(30%);
-        // left: 15px;
-        // cursor: pointer;
+      .mask-aura {
+        position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 75px;
+        height: 75px;
+        border-radius: 75px;
+        background-color: $textBlack;
+        // background-color: $bg;
+        animation: maskAura 3s linear infinite;
+        pointer-events: none;
+        z-index: 985;
+      }
 
-        .semicircle-text {
-          position: absolute;
-          transform: translateX(0);
-          transition: 0.5s ease-out;
-          color: $bg;
-          z-index: 15;
-          font-size: 1.5rem;
+      @keyframes maskAura {
+        from {
+          transform: scale(1);
+          opacity: 0.6;
         }
-
-        .semicircle-aura {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          border-radius: 200px 0 0 200px;
-          border-style: solid;
-          // border-color: $accentGreen;
-          border-width: 1px;
-          background-color: $textBlack;
-          animation: semicircleAuraExpand 3s linear infinite forwards;
-        }
-
-        @keyframes semicircleAuraExpand {
-          from {
-            transform: scale(1);
-            opacity: 0.6;
-          }
-          to {
-            transform: scale(4);
-            opacity: 0;
-          }
+        to {
+          transform: scale(3);
+          opacity: 0;
         }
       }
 
-      .title-right-close {
-        width: 0;
-        height: 100vh;
-        background-color: $textBlack;
-        z-index: 2;
-        transition: width 0.5s ease-out;
-        transform-origin: right;
-        border-right: solid 1px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      &:hover {
+        background-color: $bg;
 
-        .binary {
-          max-width: 100vh;
-          transform: rotate(90deg);
-          font-size: 25px;
-          overflow: hidden;
-          opacity: 0;
-          transition: opacity 0.1s ease-out;
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          pointer-events: none;
-
-          .lines {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-
-            p {
-              word-spacing: 5px;
-              color: $textGray;
-            }
-
-            .green {
-              color: $accentGreen;
-            }
-          }
-        }
-
-        .binary[data-animated="true"] {
-          overflow: hidden;
-          -webkit-mask: linear-gradient(
-            90deg,
-            transparent,
-            white 20%,
-            white 80%,
-            transparent
-          );
-          mask: linear-gradient(
-            90deg,
-            transparent,
-            white 20%,
-            white 80%,
-            transparent
-          );
-
-          .lines {
-            width: fit-content;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-
-            .green {
-              color: $accentGreen;
-            }
-          }
-
-          .line-one {
-            max-width: max-content !important;
-            animation: scrollLineOne 11s linear infinite;
-          }
-
-          @keyframes scrollLineOne {
-            to {
-              transform: translate(-50%);
-            }
-          }
-
-          .line-two {
-            max-width: max-content !important;
-            animation: scrollLineTwo 13s linear infinite;
-          }
-
-          @keyframes scrollLineTwo {
-            to {
-              transform: translate(-50%);
-            }
-          }
-
-          .line-three {
-            max-width: max-content !important;
-            animation: scrollLineThree 6s linear infinite;
-          }
-
-          @keyframes scrollLineThree {
-            to {
-              transform: translate(-50%);
-            }
-          }
+        .mask-aura {
+          background-color: $bg;
         }
       }
     }
 
-    .title-semicircle-open {
-      width: 40%;
-      height: 100vh;
+    .mask-div {
+      position: absolute;
+      width: 100vw;
+      height: 100vw;
+      border-radius: 2000px;
+      background-color: $textBlack;
+      z-index: 500;
+      transition: 0.7s ease-out;
       display: flex;
       flex-direction: row;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
-      background-color: $bg;
-      z-index: 4;
+      overflow: hidden;
+      transform: scale(0);
+      transition: 0.3s ease-out;
+      transition-delay: 0.3s;
 
-      .semicircle {
-        position: relative;
-        height: 200px;
-        width: 100px;
-        background-color: $textBlack;
-        border-radius: 200px 0 0 200px;
-        // transform: translateX(0);
-        // left: 15px;
-        // cursor: pointer;
+      .mask-content {
+        width: calc(100vw - 300px);
+        height: calc(100vh - 200px);
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
 
-        .semicircle-text {
-          position: absolute;
-          transform: translateX(25vw);
-          transition: 0.5s ease-out;
+        .content {
+          width: auto;
+          height: auto;
           color: $bg;
-          z-index: 15;
-          font-size: 1.5rem;
+          z-index: 990;
+          font-size: 3.5rem;
+          text-transform: uppercase;
+          transform: translateY(-10px);
+          opacity: 0;
+          transition: 0.2s ease-out;
         }
 
-        .semicircle-aura {
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          border-radius: 200px 0 0 200px;
-          border-style: solid;
-          // border-color: $accentGreen;
-          border-width: 1px;
-          background-color: $textBlack;
-          animation: semicircleAuraExpand 3s linear infinite forwards;
-        }
-
-        @keyframes semicircleAuraExpand {
-          from {
-            transform: scale(1);
-            opacity: 0.6;
-          }
-          to {
-            transform: scale(4);
-            opacity: 0;
-          }
+        .content-right {
+          text-align: right;
         }
       }
 
-      .title-right-open {
-        width: 10vw;
-        height: 100vh;
-        background-color: $textBlack;
-        z-index: 2;
-        transition: width 0.5s ease-out;
-        transform-origin: right;
-        border-right: solid 1px;
+      .mask-bg {
+        position: absolute;
+        max-width: 100vw;
+        max-height: 100vh;
+        opacity: 0;
+
+        .binary-top,
+        .binary-bottom {
+          opacity: 0;
+          transition: opacity 0.5s ease-out;
+        }
+      }
+    }
+
+    .hero-mask:hover + .mask-div {
+      transform: scale(1);
+      transition-delay: 0.3s;
+
+      .mask-content {
+        .content {
+          transform: translateY(0);
+          opacity: 1;
+          transition: 0.2s ease-out;
+          transition-delay: 0.8s;
+        }
+      }
+
+      .mask-bg {
+        width: calc(100vw);
+        height: calc(100vh - 200px);
+        position: absolute;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: space-between;
+        opacity: 1;
 
-        .binary {
+        .binary-top {
           opacity: 1;
-          transition: opacity 0.5s ease-out 0.3s;
-          max-width: 100vh;
-          transform: rotate(90deg);
-          font-size: 25px;
+          transition: opacity 0.5s ease-out 0.8s;
+          max-width: calc(100vw);
+          font-size: 20px;
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          gap: 5px;
 
           .lines {
             display: flex;
@@ -545,7 +336,7 @@
           }
         }
 
-        .binary[data-animated="true"] {
+        .binary-top[data-animated="true"] {
           overflow: hidden;
           -webkit-mask: linear-gradient(
             90deg,
@@ -580,7 +371,7 @@
 
           @keyframes scrollLineOne {
             to {
-              transform: translate(-50%);
+              transform: translate(-33.33%);
             }
           }
 
@@ -591,7 +382,7 @@
 
           @keyframes scrollLineTwo {
             to {
-              transform: translate(-50%);
+              transform: translate(-33.33%);
             }
           }
 
@@ -602,7 +393,95 @@
 
           @keyframes scrollLineThree {
             to {
-              transform: translate(-50%);
+              transform: translate(-33.33%);
+            }
+          }
+        }
+
+        .binary-bottom {
+          opacity: 1;
+          transition: opacity 0.5s ease-out 0.8s;
+          max-width: calc(100vw);
+          font-size: 20px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column-reverse;
+
+          .lines {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
+
+            p {
+              word-spacing: 5px;
+              color: $textGray;
+            }
+
+            .green {
+              color: $accentGreen;
+            }
+          }
+        }
+
+        .binary-bottom[data-animated="true"] {
+          overflow: hidden;
+          -webkit-mask: linear-gradient(
+            90deg,
+            transparent,
+            white 20%,
+            white 80%,
+            transparent
+          );
+          mask: linear-gradient(
+            90deg,
+            transparent,
+            white 20%,
+            white 80%,
+            transparent
+          );
+
+          .lines {
+            width: fit-content;
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
+            transform: translate(-33.33%);
+
+            .green {
+              color: $accentGreen;
+            }
+          }
+
+          .line-one {
+            max-width: max-content !important;
+            animation: scrollLineOneReverse 11s linear infinite;
+          }
+
+          @keyframes scrollLineOneReverse {
+            to {
+              transform: translate(0);
+            }
+          }
+
+          .line-two {
+            max-width: max-content !important;
+            animation: scrollLineTwoReverse 13s linear infinite;
+          }
+
+          @keyframes scrollLineTwoReverse {
+            to {
+              transform: translate(0);
+            }
+          }
+
+          .line-three {
+            max-width: max-content !important;
+            animation: scrollLineThreeReverse 6s linear infinite;
+          }
+
+          @keyframes scrollLineThreeReverse {
+            to {
+              transform: translate(0);
             }
           }
         }
@@ -616,33 +495,43 @@
   #hero-section {
     align-items: center;
 
-    .title-container {
-      align-items: center;
-      justify-content: center;
-      padding: 100px 100px;
-
-      .title-name {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+    .title-main {
+      .title-container {
         align-items: center;
-        gap: 1.5rem;
+        justify-content: center;
+        padding: 100px 100px;
 
-        .name-one {
-          font-size: 7rem;
-          letter-spacing: 2px;
+        .title-name {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 1.5rem;
+
+          .name-one {
+            font-size: 7rem;
+            letter-spacing: 2px;
+          }
+
+          .name-two {
+            font-size: 7rem;
+            letter-spacing: 2px;
+          }
         }
 
-        .name-two {
-          font-size: 7rem;
-          letter-spacing: 2px;
+        .title {
+          font-size: 6rem;
+          letter-spacing: 3px;
         }
       }
+    }
 
-      .title {
-        font-size: 6rem;
-        letter-spacing: 3px;
-      }
+    .hero-mask {
+      display: none;
+    }
+
+    .mask-div {
+      display: none;
     }
   }
 }
@@ -652,41 +541,51 @@
   #hero-section {
     align-items: center;
 
-    .title-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 75px 20px;
-
-      .title-name {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 0.6rem;
-
-        .name-one {
-          font-size: 3.4rem;
-          letter-spacing: 1px;
-        }
-
-        .name-two {
-          font-size: 3.4rem;
-          letter-spacing: 1px;
-        }
-      }
-
-      .title {
+    .title-main {
+      .title-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        font-size: 2.6rem;
-        line-height: 3rem;
-        letter-spacing: 1px;
+        justify-content: center;
+        text-align: center;
+        padding: 75px 20px;
+
+        .title-name {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 0.6rem;
+
+          .name-one {
+            font-size: 3.4rem;
+            letter-spacing: 1px;
+          }
+
+          .name-two {
+            font-size: 3.4rem;
+            letter-spacing: 1px;
+          }
+        }
+
+        .title {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 2.6rem;
+          line-height: 3rem;
+          letter-spacing: 1px;
+        }
       }
+    }
+
+    .hero-mask {
+      display: none;
+    }
+
+    .mask-div {
+      display: none;
     }
   }
 }
