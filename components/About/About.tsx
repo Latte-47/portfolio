@@ -4,6 +4,10 @@ import Image from "next/image";
 import "./about.scss";
 
 import placeHolderImg from "@/public/assets/images/placeholder-img.jpg";
+import profilePic from "@/public/assets/images/profile-pic.png";
+import profileOne from "@/public/assets/images/profile-one.jpg";
+import profileTwo from "@/public/assets/images/profile-two.jpg"
+
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";

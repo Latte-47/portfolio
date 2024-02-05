@@ -52,6 +52,7 @@
             position: absolute;
             left: -120px;
             top: -163px;
+            border-radius: 15px;
           }
 
           .container-div-two {
@@ -60,6 +61,7 @@
             height: 269px;
             overflow: hidden;
             z-index: 10;
+            border-radius: 15px;
           }
 
           .container-div-three {
@@ -69,6 +71,7 @@
             position: absolute;
             right: -120px;
             bottom: -163px;
+            border-radius: 15px;
           }
         }
       }

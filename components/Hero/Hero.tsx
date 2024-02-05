@@ -71,10 +71,10 @@ export default function Hero() {
     }, 65);
   }
 
-  const splitFirstName = [{ letters: heroContent.firstName.split("") }];
-  const splitLastName = [{ letters: heroContent.lastName.split("") }];
-  const splitTitleOne = [{ letters: heroContent.titleOne.split("") }];
-  const splitTitleTwo = [{ letters: heroContent.titleTwo.split("") }];
+  // const splitFirstName = [{ letters: heroContent.firstName.split("") }];
+  // const splitLastName = [{ letters: heroContent.lastName.split("") }];
+  // const splitTitleOne = [{ letters: heroContent.titleOne.split("") }];
+  // const splitTitleTwo = [{ letters: heroContent.titleTwo.split("") }];
 
   const splitLineOne = [{ letters: binaryContent.lineOne.split(" ") }];
   const splitLineTwo = [{ letters: binaryContent.lineTwo.split(" ") }];
@@ -97,33 +97,23 @@ export default function Hero() {
       <div className="title-main">
         <div className="title-container">
           <div className="title-name">
-            {splitFirstName.map((letterGroup, index) => (
-              <div
-                className="name-one"
-                data-aos="fade-right"
-                data-aos-once="true"
-                data-aos-easing="ease-out-back"
-                key={index}
-              >
-                {letterGroup.letters.map((letter, i) => (
-                  <p key={i}>{letter}</p>
-                ))}
-              </div>
-            ))}
-            {splitLastName.map((letterGroup, index) => (
-              <div
-                className="name-two"
-                data-aos="fade-right"
-                data-aos-once="true"
-                data-aos-easing="ease-out-back"
-                data-aos-delay="100"
-                key={index}
-              >
-                {letterGroup.letters.map((letter, i) => (
-                  <p key={i}>{letter}</p>
-                ))}
-              </div>
-            ))}
+            <div
+              className="name-one"
+              data-aos="fade-right"
+              data-aos-once="true"
+              data-aos-easing="ease-out-back"
+            >
+              <p>{heroContent.firstName}</p>
+            </div>
+            <div
+              className="name-two"
+              data-aos="fade-right"
+              data-aos-once="true"
+              data-aos-easing="ease-out-back"
+              data-aos-delay="100"
+            >
+              <p>{heroContent.lastName}</p>
+            </div>
           </div>
           <div
             className="title"
@@ -132,20 +122,12 @@ export default function Hero() {
             data-aos-easing="ease-out-back"
             data-aos-delay="200"
           >
-            {splitTitleOne.map((letterGroup, index) => (
-              <div className="title-one" key={index}>
-                {letterGroup.letters.map((letter, i) => (
-                  <p key={i}>{letter}</p>
-                ))}
-              </div>
-            ))}
-            {splitTitleTwo.map((letterGroup, index) => (
-              <div className="title-two" key={index}>
-                {letterGroup.letters.map((letter, i) => (
-                  <p key={i}>{letter}</p>
-                ))}
-              </div>
-            ))}
+            <div className="title-one">
+              <p>{heroContent.titleOne}</p>
+            </div>
+            <div className="title-two">
+              <p>{heroContent.titleTwo}</p>
+            </div>
           </div>
         </div>
         <div

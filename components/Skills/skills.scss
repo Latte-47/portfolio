@@ -2,7 +2,7 @@
 
 #skills-section {
   width: 100vw;
-  
+
   .skills-container {
     padding: 100px 150px;
     height: auto;
@@ -41,6 +41,15 @@
           align-items: center;
           // opacity: 0;
 
+          &:hover {
+            .icon-container {
+              svg {
+                scale: 1.2;
+                transition: 0.2s ease-in-out;
+              }
+            }
+          }
+
           .name {
             font-size: 1.4rem;
           }
@@ -48,6 +57,8 @@
           .icon-container {
             svg {
               width: 60px;
+              scale: 1;
+              transition: 0.2s ease-in-out;
             }
           }
         }
@@ -59,11 +70,10 @@
 //*-----> Tablets
 @media only screen and (max-device-width: 1024px) {
   #skills-section {
-
     .skills-container {
       padding: 200px 50px;
       height: 90vh;
-      
+
       .title {
         font-size: 3.5rem;
       }
@@ -77,13 +87,11 @@
           width: 50vw;
 
           .skills {
-
             .name {
               font-size: 1.7rem;
             }
 
             .icon-container {
-
               svg {
                 width: 70px;
               }

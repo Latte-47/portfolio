@@ -180,6 +180,7 @@
             &:hover {
               transition: background-color .25s ease-out;
               background-color: $accentGreen;
+              color: $bg;
             }
 
             &::after {
@@ -187,7 +188,7 @@
               content: "";
               width: 3.8%;
               height: 1px;
-              background: $textBlack;
+              background: $bg;
               transition: transform 0.25s ease-out;
               transform-origin: bottom right;
               transform: scaleX(0);
