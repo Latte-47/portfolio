@@ -11,7 +11,7 @@ import useMouseClicked from "@/utils/mouseClicked";
 const heroContent = {
   firstName: "VIPLAV",
   lastName: "KAMBLE",
-  titleOne: "FRONT-",
+  titleOne: "FRONT",
   titleTwo: "END",
   titleThree: "DEVELOPER",
 };
