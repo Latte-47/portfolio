@@ -6,9 +6,11 @@ import "./about.scss";
 import placeHolderImg from "@/public/assets/images/placeholder-img.jpg";
 import profilePic from "@/public/assets/images/profile-pic.png";
 import profileOne from "@/public/assets/images/profile-one.jpg";
-import profileTwo from "@/public/assets/images/profile-two.jpg"
+import profileTwo from "@/public/assets/images/profile-two.jpg";
+import ArrowLeft from "../Icons/ArrowLeft";
+import ArrowRight from "../Icons/ArrowRight";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -30,7 +32,14 @@ import "aos/dist/aos.css";
 //   },
 // ];
 
+const quoteList = [
+  "Whatever you do, enjoy it to the fullest. That is the secret of life.",
+  "The only way to truly escape the mundane is for you to constantly be evolving.",
+];
+
 export default function About() {
+  const [quoteIndex, setQuoteIndex] = useState(1);
+
   useEffect(() => {
     AOS.init();
   });
@@ -61,7 +70,17 @@ export default function About() {
             data-aos-offset="300"
           >
             <div className="container-main">
-              <div className="container-div-one"></div>
+              <div className="container-div-one">
+                <button
+                  onClick={() => {
+                    quoteIndex == 0
+                      ? setQuoteIndex(quoteList.length - 1)
+                      : setQuoteIndex(quoteIndex - 1);
+                  }}
+                >
+                  <ArrowLeft />
+                </button>
+              </div>
               <div className="container-div-two">
                 <Image
                   fill
@@ -69,8 +88,21 @@ export default function About() {
                   alt="placeHolderImg"
                   style={{ objectFit: "cover" }}
                 />
+                <div className="image-cover">
+                  <p>&quot;{quoteList[quoteIndex]}&quot;</p>
+                </div>
               </div>
-              <div className="container-div-three"></div>
+              <div className="container-div-three">
+                <button
+                  onClick={() => {
+                    quoteIndex == quoteList.length - 1
+                      ? setQuoteIndex(0)
+                      : setQuoteIndex(quoteIndex + 1);
+                  }}
+                >
+                  <ArrowRight />
+                </button>
+              </div>
             </div>
           </div>
           <div

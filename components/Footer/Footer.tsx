@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="left">
           <p>
             PORTFOLIO/
-            <span>2023</span>
+            <span>2024</span>
           </p>
         </div>
         <div className="center">

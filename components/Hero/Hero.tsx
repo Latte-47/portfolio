@@ -11,8 +11,9 @@ import useMouseClicked from "@/utils/mouseClicked";
 const heroContent = {
   firstName: "VIPLAV",
   lastName: "KAMBLE",
-  titleOne: "FRONT-END",
-  titleTwo: "DEVELOPER",
+  titleOne: "FRONT-",
+  titleTwo: "END",
+  titleThree: "DEVELOPER",
 };
 
 const binaryContent = {
@@ -97,22 +98,24 @@ export default function Hero() {
       <div className="title-main">
         <div className="title-container">
           <div className="title-name">
-            <div
-              className="name-one"
-              data-aos="fade-right"
-              data-aos-once="true"
-              data-aos-easing="ease-out-back"
-            >
-              <p>{heroContent.firstName}</p>
-            </div>
-            <div
-              className="name-two"
-              data-aos="fade-right"
-              data-aos-once="true"
-              data-aos-easing="ease-out-back"
-              data-aos-delay="100"
-            >
-              <p>{heroContent.lastName}</p>
+            <div className="name-container">
+              <div
+                className="name-one"
+                data-aos="fade-right"
+                data-aos-once="true"
+                data-aos-easing="ease-out-back"
+              >
+                <p>{heroContent.firstName}</p>
+              </div>
+              <div
+                className="name-two"
+                data-aos="fade-right"
+                data-aos-once="true"
+                data-aos-easing="ease-out-back"
+                data-aos-delay="100"
+              >
+                <p>{heroContent.lastName}</p>
+              </div>
             </div>
           </div>
           <div
@@ -122,11 +125,16 @@ export default function Hero() {
             data-aos-easing="ease-out-back"
             data-aos-delay="200"
           >
-            <div className="title-one">
-              <p>{heroContent.titleOne}</p>
-            </div>
-            <div className="title-two">
-              <p>{heroContent.titleTwo}</p>
+            <div className="job-container">
+              <div className="title-one">
+                <p>{heroContent.titleOne}</p>
+              </div>
+              <div className="title-two">
+                <p>{heroContent.titleTwo}</p>
+              </div>
+              <div className="title-three">
+                <p>{heroContent.titleThree}</p>
+              </div>
             </div>
           </div>
         </div>
