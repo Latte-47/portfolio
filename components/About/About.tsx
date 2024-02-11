@@ -113,23 +113,32 @@ export default function About() {
             data-aos-anchor=".about-title"
             data-aos-offset="300"
           >
-            <p>
+            <p className="about-text-content">
               Ever since I was younger, I&apos;ve been immersed in the world of
               technology, and it was only natural that my journey led me to a
               career in coding.
             </p>
-            <p>
+            <p className="about-text-content">
               Completing my bachelor&apos;s in mathematics and electronics in
               2022, I redirected my efforts toward web development. Rapidly
               adapting to fresh concepts, I sustained an ongoing cycle of
               learning and growth with every new project.
             </p>
-            <p>
+            <p className="about-text-content">
               Beyond the lines of code, you&apos;ll find me immersed in diverse
               interests. I&apos;m usually engrossed in a game, strumming a new
               tune on my ukulele, or exploring the great outdoors in search of
               fascinating new places.
             </p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/16fLf9GoIusvwAdjvRZ2-89wMKgKy2i_D/view?usp=sharing"
+            >
+              <button type="button">
+                <p>Resume</p>
+              </button>
+            </a>
           </div>
         </div>
       </div>

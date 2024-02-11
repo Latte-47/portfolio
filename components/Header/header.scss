@@ -81,11 +81,11 @@ header {
         border-color: $textBlack;
         border-radius: 15px;
         font-size: 1.5rem;
-        transition: .25s ease-out;
+        transition: 0.25s ease-out;
         cursor: pointer;
 
         &:hover {
-          transition: .25s ease-out;
+          transition: 0.25s ease-out;
           background-color: $accentGreen;
           color: $bg;
         }
@@ -97,7 +97,7 @@ header {
           content: "";
           width: 50%;
           height: 1px;
-          background: $bg;
+          background: $textBlack;
           transition: transform 0.25s ease-out;
           transform-origin: bottom right;
           transform: scaleX(0);
@@ -108,6 +108,7 @@ header {
           transform-origin: bottom left;
           transform: scaleX(1);
           width: 50%;
+          background: $bg;
         }
       }
 
@@ -117,7 +118,7 @@ header {
           content: "";
           width: 70%;
           height: 1px;
-          background: $bg;
+          background: $textBlack;
           transition: transform 0.25s ease-out;
           transform-origin: bottom right;
           transform: scaleX(0);
@@ -128,6 +129,7 @@ header {
           transform-origin: bottom left;
           transform: scaleX(1);
           width: 70%;
+          background: $bg;
         }
       }
 
@@ -137,7 +139,7 @@ header {
           content: "";
           width: 55%;
           height: 1px;
-          background: $bg;
+          background: $textBlack;
           transition: transform 0.25s ease-out;
           transform-origin: bottom right;
           transform: scaleX(0);
@@ -148,6 +150,7 @@ header {
           transform-origin: bottom left;
           transform: scaleX(1);
           width: 55%;
+          background: $bg;
         }
       }
     }
@@ -205,10 +208,12 @@ header {
       display: none;
     }
 
-    .menu-opened, .menu-closed {
+    .menu-opened,
+    .menu-closed {
       display: none;
 
-      .mask-active, .mask-inactive {
+      .mask-active,
+      .mask-inactive {
         display: none;
       }
     }
@@ -264,7 +269,6 @@ header {
         }
       }
 
-      
       .menu-closed {
         display: block;
         position: absolute;
@@ -286,18 +290,17 @@ header {
         .mask-inactive {
           display: none;
         }
-  
-        
+
         .menu-container {
           display: block;
-          
+
           .menu-separator {
             display: block;
             width: 70%;
             height: 1px;
             transform: scaleX(0);
           }
-          
+
           .menu-skills,
           .menu-projects,
           .menu-about {
@@ -305,7 +308,7 @@ header {
           }
         }
       }
-      
+
       .menu-opened {
         display: block;
         position: absolute;
@@ -358,8 +361,8 @@ header {
             background-color: $bg;
             width: 70%;
             transform: scaleX(1);
-            transition: transform .35s;
-            transition-delay: .25s;
+            transition: transform 0.35s;
+            transition-delay: 0.25s;
           }
 
           .menu-skills,

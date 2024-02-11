@@ -28,7 +28,7 @@
       height: 100%;
       justify-content: center;
       align-items: center;
-      padding: 150px 0;
+      padding: 100px 0;
 
       .about-image {
         position: relative;
@@ -242,27 +242,71 @@
       .about-text {
         width: 50%;
         font-size: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
 
-        p {
+        .about-text-content {
           padding: 10px 0;
           text-align: center;
           transition: 0.25s ease-in-out;
 
-          &:nth-child(1) {
-            &:hover {
-              scale: 1.05;
-            }
-          }
+          // &:hover {
+          //   scale: 1.05;
+          // }
+        }
 
-          &:nth-child(2) {
-            &:hover {
-              scale: 1.05;
-            }
-          }
+        a {
+          text-decoration: none;
 
-          &:nth-child(3) {
+          button {
+            width: 150px;
+            height: 35px;
+            border: none;
+            border-style: solid;
+            border-color: black;
+            border-radius: 15px;
+            border-width: 1px;
+            background-color: $bg;
+            color: $textBlack;
+            font-family: $fontOpenSans;
+            font-size: 1.6rem;
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.25s ease-out;
+            cursor: pointer;
+
             &:hover {
-              scale: 1.05;
+              transition: background-color 0.25s ease-out;
+              background-color: $accentGreen;
+              color: $bg;
+            }
+
+            &::after {
+              position: absolute;
+              content: "";
+              width: 3.8%;
+              height: 1px;
+              background: $textBlack;
+              transition: transform 0.25s ease-out;
+              transform-origin: bottom right;
+              transform: scaleX(0);
+              margin-top: 15px;
+            }
+
+            &:hover::after {
+              transform-origin: bottom left;
+              transform: scaleX(1);
+              width: 3.8%;
+              background: $bg;
+            }
+
+            p {
+              font-size: 1.6rem;
             }
           }
         }
