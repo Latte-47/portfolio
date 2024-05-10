@@ -84,8 +84,8 @@ export default function About() {
               <div className="container-div-two">
                 <Image
                   fill
-                  src={placeHolderImg}
-                  alt="placeHolderImg"
+                  src={profileTwo}
+                  alt="profile"
                   style={{ objectFit: "cover" }}
                 />
                 <div className="image-cover">
